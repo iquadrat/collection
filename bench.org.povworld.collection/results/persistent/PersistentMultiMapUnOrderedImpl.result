@@ -1,0 +1,40 @@
+Initializing Benchmarking Framework...
+Running on Linux 3.11.4-pf-i7
+Max heap = 7484735488 System Benchmark = 0.86ns
+Performing 35 benchmarking tasks..
+[0]	PersistentMultiMapUnOrderedBenchString(0,2,false).duplicate	skipped
+[0]	PersistentMultiMapUnOrderedBenchString(1,2,false).duplicate**********	144ns
+[1]	PersistentMultiMapUnOrderedBenchString(10,2,false).duplicate**********	188ns
+[2]	PersistentMultiMapUnOrderedBenchString(100,2,false).duplicate**********	226ns
+[3]	PersistentMultiMapUnOrderedBenchString(1000,2,false).duplicate***!***!!**********	226ns
+[4]	PersistentMultiMapUnOrderedBenchString(10000,2,false).duplicate!**********	316ns
+[5]	PersistentMultiMapUnOrderedBenchString(100000,2,false).duplicate*!****.****.	375ns
+[6]	PersistentMultiMapUnOrderedBenchString(0,2,false).getContainedKey	skipped
+[6]	PersistentMultiMapUnOrderedBenchString(1,2,false).getContainedKey...........	15.4ns
+[7]	PersistentMultiMapUnOrderedBenchString(10,2,false).getContainedKey...........	12.9ns
+[8]	PersistentMultiMapUnOrderedBenchString(100,2,false).getContainedKey..........	14.4ns
+[9]	PersistentMultiMapUnOrderedBenchString(1000,2,false).getContainedKey..........	26.7ns
+[10]	PersistentMultiMapUnOrderedBenchString(10000,2,false).getContainedKey..........	43.8ns
+[11]	PersistentMultiMapUnOrderedBenchString(100000,2,false).getContainedKey..................................	92.7ns
+[12]	PersistentMultiMapUnOrderedBenchString(0,2,false).getNotContainedKey	skipped
+[12]	PersistentMultiMapUnOrderedBenchString(1,2,false).getNotContainedKey..........	10.9ns
+[13]	PersistentMultiMapUnOrderedBenchString(10,2,false).getNotContainedKey..........	10.7ns
+[14]	PersistentMultiMapUnOrderedBenchString(100,2,false).getNotContainedKey..........	9.53ns
+[15]	PersistentMultiMapUnOrderedBenchString(1000,2,false).getNotContainedKey............	18.0ns
+[16]	PersistentMultiMapUnOrderedBenchString(10000,2,false).getNotContainedKey..........	36.2ns
+[17]	PersistentMultiMapUnOrderedBenchString(100000,2,false).getNotContainedKey..........	61.8ns
+[18]	PersistentMultiMapUnOrderedBenchString(0,2,false).memory	skipped
+[18]	PersistentMultiMapUnOrderedBenchString(1,2,false).memory!....	264s
+[19]	PersistentMultiMapUnOrderedBenchString(10,2,false).memory!....	137s
+[20]	PersistentMultiMapUnOrderedBenchString(100,2,false).memory!....	146s
+[21]	PersistentMultiMapUnOrderedBenchString(1000,2,false).memory!!...	121s
+[22]	PersistentMultiMapUnOrderedBenchString(10000,2,false).memory!!!!.	141s
+[23]	PersistentMultiMapUnOrderedBenchString(100000,2,false).memory!!..!	119s
+[24]	PersistentMultiMapUnOrderedBenchString(0,2,false).putNewKey	skipped
+[24]	PersistentMultiMapUnOrderedBenchString(1,2,false).putNewKey**********	40.4ns
+[25]	PersistentMultiMapUnOrderedBenchString(10,2,false).putNewKey**********	110ns
+[26]	PersistentMultiMapUnOrderedBenchString(100,2,false).putNewKey**********	105ns
+[27]	PersistentMultiMapUnOrderedBenchString(1000,2,false).putNewKey*****!**********	176ns
+[28]	PersistentMultiMapUnOrderedBenchString(10000,2,false).putNewKey***********	225ns
+[29]	PersistentMultiMapUnOrderedBenchString(100000,2,false).putNewKey!*****.****	376ns
+Success.

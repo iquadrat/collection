@@ -1,0 +1,76 @@
+Initializing Benchmarking Framework...
+Running on Linux 4.13.0-pf4amd
+Max heap = 7486832640 System Benchmark = 0.94ns
+Performing 32 benchmarking tasks..
+[0]	ArrayListBench(0).addNoReserve**********	18.7ns
+[1]	ArrayListBench(1).addNoReserve********!**********	18.6ns
+[2]	ArrayListBench(10).addNoReserve**********	2.75ns
+[3]	ArrayListBench(100).addNoReserve**********	4.20ns
+[4]	ArrayListBench(1000).addNoReserve************	4.74ns
+[5]	ArrayListBench(10000).addNoReserve*******!***!**********	6.01ns
+[6]	ArrayListBench(100000).addNoReserve*********!*!******!**********	5.21ns
+[7]	ArrayListBench(1000000).addNoReserve***!.**.*.*.*..*..*.*..!...*.!..*.!*.*.*.*.*.*.**.**	5.25ns
+[8]	ArrayListBench(0).addReserve.**.***.!**********	19.3ns
+[9]	ArrayListBench(1).addReserve**********	21.0ns
+[10]	ArrayListBench(10).addReserve**********	3.47ns
+[11]	ArrayListBench(100).addReserve*****!*****!*!************	2.08ns
+[12]	ArrayListBench(1000).addReserve**********	3.67ns
+[13]	ArrayListBench(10000).addReserve***!***********	3.62ns
+[14]	ArrayListBench(100000).addReserve**!***!**********	3.68ns
+[15]	ArrayListBench(1000000).addReserve***.!*.*.*.*.*..	3.67ns
+[16]	ArrayListBench(0).getRandom..........	5.65ns
+[17]	ArrayListBench(1).getRandom..........	5.86ns
+[18]	ArrayListBench(10).getRandom..........	1.36ns
+[19]	ArrayListBench(100).getRandom.!..........	0.91ns
+[20]	ArrayListBench(1000).getRandom..........	0.78ns
+[21]	ArrayListBench(10000).getRandom..........	0.83ns
+[22]	ArrayListBench(100000).getRandom!..........	1.04ns
+[23]	ArrayListBench(1000000).getRandom.!......!....................................!..............	2.36ns
+[24]	ArrayListBench(0).iterate...*..*..*.	6.20ns
+[25]	ArrayListBench(1).iterate...*..*..*	7.24ns
+[26]	ArrayListBench(10).iterate....*...*.	1.07ns
+[27]	ArrayListBench(100).iterate..........	0.34ns
+[28]	ArrayListBench(1000).iterate..........	0.27ns
+[29]	ArrayListBench(10000).iterate..........	0.25ns
+[30]	ArrayListBench(100000).iterate...........	0.25ns
+[31]	ArrayListBench(1000000).iterate.......!............	0.26ns
+Success.
+
+
+Initializing Benchmarking Framework...
+Running on Linux 4.13.0-pf4amd
+Max heap = 7486832640 System Benchmark = 0.80ns
+Performing 32 benchmarking tasks..
+[0]	ArrayListBench(0).addNoReserve.*.*.*.*.*!*******************!***********************!***!********************************!*!*******************!*******!*****************!*****************!************************!***!****************************************************	17.4ns
+[1]	ArrayListBench(1).addNoReserve!****!*!**!******!**************!***************************************************************************!************************!******************	18.1ns
+[2]	ArrayListBench(10).addNoReserve.**.***.****.*	2.66ns
+[3]	ArrayListBench(100).addNoReserve.**.**.***.**.***.**.**.!.*.*.*.*.**.*.*.*.!**.*.*.**.*.*.**.*.*.*.**.*.**.*.*.*.**.*.*.**.*.*.**.*.*.*.**.*.**.*.*.*.**.*.*.*.**.*.*.**.*.*.*.*	5.16ns
+[4]	ArrayListBench(1000).addNoReserve.***.***.****.***.***.***.****.***.****.**.****.***.****.***.***.***.****.***.***.****.***.***.***.*	5.89ns
+[5]	ArrayListBench(10000).addNoReserve!****.*******.********.*********.*******.*******.*******.********.*******.*******.********.*******.**	6.06ns
+[6]	ArrayListBench(100000).addNoReserve.**.***.***!****.******.******.******.******.******.******.******.*******.******.******.******.******.*****	5.29ns
+[7]	ArrayListBench(1000000).addNoReserve..!*!..*...*..*...*..*...*..*..*.!.*.**.*.**.*.*..*.*.*..*.*.*.*.*.*.*.*.*.**.*.**.**.**.*.**..*.*.*..*.*.*..*.*.*.*.*.*.*.**.!**.*.**.**.!.***.*.**.**.*.*.*.*.*.*..*.*.*.*.**.*.**.*.***.*.**.**.**.*.*.*.*.*.!.***.***.*.*.**.**.**.***.**.*.**.*.**.**.*.*.**.*.*.**.**.**.*.**.**.***.***.*.*.**.*.*.*.**.**.***	6.28ns
+[8]	ArrayListBench(0).addReserve...*..*..*	18.8ns
+[9]	ArrayListBench(1).addReserve..*..*..*.	20.7ns
+[10]	ArrayListBench(10).addReserve..*.*.**.*	3.43ns
+[11]	ArrayListBench(100).addReserve.*.**..*..*	2.09ns
+[12]	ArrayListBench(1000).addReserve....*...*.	3.70ns
+[13]	ArrayListBench(10000).addReserve.....*...*	3.64ns
+[14]	ArrayListBench(100000).addReserve...*..!...*...*..	3.68ns
+[15]	ArrayListBench(1000000).addReserve..!*....*....*.	3.69ns
+[16]	ArrayListBench(0).getRandom..........	5.74ns
+[17]	ArrayListBench(1).getRandom..........	5.97ns
+[18]	ArrayListBench(10).getRandom..........	1.40ns
+[19]	ArrayListBench(100).getRandom..........	0.89ns
+[20]	ArrayListBench(1000).getRandom..........	0.80ns
+[21]	ArrayListBench(10000).getRandom..........	0.84ns
+[22]	ArrayListBench(100000).getRandom!....!...........	1.06ns
+[23]	ArrayListBench(1000000).getRandom.!......................................!..........	1.47ns
+[24]	ArrayListBench(0).iterate....*...*.	5.99ns
+[25]	ArrayListBench(1).iterate....*...*....	6.99ns
+[26]	ArrayListBench(10).iterate.....*....	1.07ns
+[27]	ArrayListBench(100).iterate..........	0.33ns
+[28]	ArrayListBench(1000).iterate..........	0.27ns
+[29]	ArrayListBench(10000).iterate..........	0.25ns
+[30]	ArrayListBench(100000).iterate.............	0.25ns
+[31]	ArrayListBench(1000000).iterate.......!..........	0.25ns
+Success.

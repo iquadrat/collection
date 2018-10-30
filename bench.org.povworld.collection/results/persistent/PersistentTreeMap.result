@@ -1,0 +1,45 @@
+Initializing Benchmarking Framework...
+Running on Linux 4.13.0-pf4amd
+Max heap = 7486832640 System Benchmark = 0.76ns
+Performing 40 benchmarking tasks..
+[0]	PersistentTreeMapBenchString(0).duplicate**********	22.1ns
+[1]	PersistentTreeMapBenchString(1).duplicate*****!****!**********	45.2ns
+[2]	PersistentTreeMapBenchString(10).duplicate************	79.2ns
+[3]	PersistentTreeMapBenchString(100).duplicate**********	150ns
+[4]	PersistentTreeMapBenchString(1000).duplicate****!**********	283ns
+[5]	PersistentTreeMapBenchString(10000).duplicate***!**!**!****!**********	418ns
+[6]	PersistentTreeMapBenchString(100000).duplicate*!!*****!**********	533ns
+[7]	PersistentTreeMapBenchString(1000000).duplicate!**********	634ns
+[8]	PersistentTreeMapBenchString(0).getContainedKey.....!.......!......!....!..........	5.49ns
+[9]	PersistentTreeMapBenchString(1).getContainedKey..........	11.8ns
+[10]	PersistentTreeMapBenchString(10).getContainedKey...........	12.3ns
+[11]	PersistentTreeMapBenchString(100).getContainedKey............	24.8ns
+[12]	PersistentTreeMapBenchString(1000).getContainedKey!............	81.4ns
+[13]	PersistentTreeMapBenchString(10000).getContainedKey!..!.!..........	166ns
+[14]	PersistentTreeMapBenchString(100000).getContainedKey..!..........	404ns
+[15]	PersistentTreeMapBenchString(1000000).getContainedKey!..........	921ns
+[16]	PersistentTreeMapBenchString(0).getNotContainedKey..........	5.58ns
+[17]	PersistentTreeMapBenchString(1).getNotContainedKey.!..........	11.8ns
+[18]	PersistentTreeMapBenchString(10).getNotContainedKey..........	14.4ns
+[19]	PersistentTreeMapBenchString(100).getNotContainedKey....................	27.9ns
+[20]	PersistentTreeMapBenchString(1000).getNotContainedKey!.................!.....!...................	100ns
+[21]	PersistentTreeMapBenchString(10000).getNotContainedKey.!............	204ns
+[22]	PersistentTreeMapBenchString(100000).getNotContainedKey...!............	465ns
+[23]	PersistentTreeMapBenchString(1000000).getNotContainedKey!..........	1.06us
+[24]	PersistentTreeMapBenchString(0).memory!....	0.00ns
+[25]	PersistentTreeMapBenchString(1).memory!....	176s
+[26]	PersistentTreeMapBenchString(10).memory!....	46.4s
+[27]	PersistentTreeMapBenchString(100).memory!!!..	33.4s
+[28]	PersistentTreeMapBenchString(1000).memory!....	32.1s
+[29]	PersistentTreeMapBenchString(10000).memory!.!..	32.0s
+[30]	PersistentTreeMapBenchString(100000).memory!!...	32.0s
+[31]	PersistentTreeMapBenchString(1000000).memory!!...	31.9s
+[32]	PersistentTreeMapBenchString(0).putNewKey..........	5.76ns
+[33]	PersistentTreeMapBenchString(1).putNewKey.***.****.*	37.5ns
+[34]	PersistentTreeMapBenchString(10).putNewKey.*.**.**.*	90.0ns
+[35]	PersistentTreeMapBenchString(100).putNewKey..*.*.*.*.	210ns
+[36]	PersistentTreeMapBenchString(1000).putNewKey...!...!...*...*...*....*...	407ns
+[37]	PersistentTreeMapBenchString(10000).putNewKey......*..!*...*..*..	592ns
+[38]	PersistentTreeMapBenchString(100000).putNewKey......!.....*.....*.	946ns
+[39]	PersistentTreeMapBenchString(1000000).putNewKey!***.****.*	1.75us
+Success.

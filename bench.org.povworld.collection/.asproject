@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectSettings>
+  <version format="5.6.0" />
+  <resourcepaths>
+    <builtin>core</builtin>
+    <builtin>diagram</builtin>
+  </resourcepaths>
+  <templatepaths />
+  <targetpaths />
+  <ignoreWhitespaceAtLineEnd>true</ignoreWhitespaceAtLineEnd>
+  <executeSaveActions>true</executeSaveActions>
+  <generateJavaModel>true</generateJavaModel>
+</projectSettings>
+

@@ -1,0 +1,45 @@
+Initializing Benchmarking Framework...
+Running on Linux 3.11.4-pf-i7
+Max heap = 7484735488 System Benchmark = 0.99ns
+Performing 40 benchmarking tasks..
+[0]	PersistentHashMapBenchString(0).duplicate...............	5.82ns
+[1]	PersistentHashMapBenchString(1).duplicate***********	41.1ns
+[2]	PersistentHashMapBenchString(10).duplicate***********	77.1ns
+[3]	PersistentHashMapBenchString(100).duplicate**********	116ns
+[4]	PersistentHashMapBenchString(1000).duplicate***!**********	109ns
+[5]	PersistentHashMapBenchString(10000).duplicate*******!***********	172ns
+[6]	PersistentHashMapBenchString(100000).duplicate**********	186ns
+[7]	PersistentHashMapBenchString(1000000).duplicate!!**********!**********	224ns
+[8]	PersistentHashMapBenchString(0).getContainedKey..........	4.31ns
+[9]	PersistentHashMapBenchString(1).getContainedKey..........	10.7ns
+[10]	PersistentHashMapBenchString(10).getContainedKey...........	15.7ns
+[11]	PersistentHashMapBenchString(100).getContainedKey..........	12.3ns
+[12]	PersistentHashMapBenchString(1000).getContainedKey...........	27.4ns
+[13]	PersistentHashMapBenchString(10000).getContainedKey..........	47.2ns
+[14]	PersistentHashMapBenchString(100000).getContainedKey...........	76.8ns
+[15]	PersistentHashMapBenchString(1000000).getContainedKey!..........	197ns
+[16]	PersistentHashMapBenchString(0).getNotContainedKey..........	4.32ns
+[17]	PersistentHashMapBenchString(1).getNotContainedKey..........	9.89ns
+[18]	PersistentHashMapBenchString(10).getNotContainedKey...........	9.92ns
+[19]	PersistentHashMapBenchString(100).getNotContainedKey..........	9.53ns
+[20]	PersistentHashMapBenchString(1000).getNotContainedKey..........	17.1ns
+[21]	PersistentHashMapBenchString(10000).getNotContainedKey..........	38.4ns
+[22]	PersistentHashMapBenchString(100000).getNotContainedKey..........	56.8ns
+[23]	PersistentHashMapBenchString(1000000).getNotContainedKey......!..........	151ns
+[24]	PersistentHashMapBenchString(0).memory.....	96.0s
+[25]	PersistentHashMapBenchString(1).memory.....	144s
+[26]	PersistentHashMapBenchString(10).memory.....	31.2s
+[27]	PersistentHashMapBenchString(100).memory.....	41.4s
+[28]	PersistentHashMapBenchString(1000).memory!..!.	17.5s
+[29]	PersistentHashMapBenchString(10000).memory!!...	37.2s
+[30]	PersistentHashMapBenchString(100000).memory!!...	15.4s
+[31]	PersistentHashMapBenchString(1000000).memory!!...	31.6s
+[32]	PersistentHashMapBenchString(0).putNewKey...........	4.30ns
+[33]	PersistentHashMapBenchString(1).putNewKey.*****.*****.*	22.2ns
+[34]	PersistentHashMapBenchString(10).putNewKey..*.*.*.*.	89.0ns
+[35]	PersistentHashMapBenchString(100).putNewKey**********	71.9ns
+[36]	PersistentHashMapBenchString(1000).putNewKey.**.!.**.**.**.	147ns
+[37]	PersistentHashMapBenchString(10000).putNewKey.*!***.****.*	167ns
+[38]	PersistentHashMapBenchString(100000).putNewKey.!*.*.*..*.*	308ns
+[39]	PersistentHashMapBenchString(1000000).putNewKey!*.**.**.***	462ns
+Success.

@@ -1,0 +1,29 @@
+Initializing Benchmarking Framework...
+Running on Linux 4.13.0-pf4amd
+Max heap = 7486832640 System Benchmark = 0.85ns
+Performing 24 benchmarking tasks..
+[0]	PersistentIntervalMapBench(0).getOverlappers..........	5.67ns
+[1]	PersistentIntervalMapBench(1).getOverlappers**********	58.9ns
+[2]	PersistentIntervalMapBench(10).getOverlappers**********	125ns
+[3]	PersistentIntervalMapBench(100).getOverlappers**********	501ns
+[4]	PersistentIntervalMapBench(1000).getOverlappers!!!******!**********	4.62us
+[5]	PersistentIntervalMapBench(10000).getOverlappers!***!**!***!**********	48.5us
+[6]	PersistentIntervalMapBench(0).iterate********!**!**********	25.7ns
+[7]	PersistentIntervalMapBench(1).iterate**********	60.4ns
+[8]	PersistentIntervalMapBench(10).iterate**********	34.3ns
+[9]	PersistentIntervalMapBench(100).iterate**********	31.9ns
+[10]	PersistentIntervalMapBench(1000).iterate****!**********	35.7ns
+[11]	PersistentIntervalMapBench(10000).iterate!*****!******!**********	38.3ns
+[12]	PersistentIntervalMapBench(0).memory!....	0.00ns
+[13]	PersistentIntervalMapBench(1).memory!....	304s
+[14]	PersistentIntervalMapBench(10).memory!....	153s
+[15]	PersistentIntervalMapBench(100).memory!!!!.	116s
+[16]	PersistentIntervalMapBench(1000).memory!...!	115s
+[17]	PersistentIntervalMapBench(10000).memory!!!.!	117s
+[18]	PersistentIntervalMapBench(0).putNewInterval....!.......!..........	5.57ns
+[19]	PersistentIntervalMapBench(1).putNewInterval!***********	99.6ns
+[20]	PersistentIntervalMapBench(10).putNewInterval**********	150ns
+[21]	PersistentIntervalMapBench(100).putNewInterval********!**********	325ns
+[22]	PersistentIntervalMapBench(1000).putNewInterval***********	541ns
+[23]	PersistentIntervalMapBench(10000).putNewInterval*********!**********	884ns
+Success.

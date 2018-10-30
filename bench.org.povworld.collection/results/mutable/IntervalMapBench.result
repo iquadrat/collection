@@ -1,0 +1,41 @@
+Initializing Benchmarking Framework...
+Running on Linux 4.13.0-pf4amd
+Max heap = 7486832640 System Benchmark = 0.93ns
+Performing 36 benchmarking tasks..
+[0]	IntervalMapBench(100,true).add.**.**.***	96.7ns
+[1]	IntervalMapBench(100,false).add.**!****!**********	88.1ns
+[2]	IntervalMapBench(1000,true).add.*.!**.*.*.**.	222ns
+[3]	IntervalMapBench(1000,false).add.*!*****.****	165ns
+[4]	IntervalMapBench(10000,true).add..*!.*.*.*.*.*	347ns
+[5]	IntervalMapBench(10000,false).add..!.!.**.***.**	286ns
+[6]	IntervalMapBench(100,true).addRemove**********	232ns
+[7]	IntervalMapBench(100,false).addRemove***!**********	201ns
+[8]	IntervalMapBench(1000,true).addRemove.*******!**********	426ns
+[9]	IntervalMapBench(1000,false).addRemove*****!!**********	385ns
+[10]	IntervalMapBench(10000,true).addRemove.!.!**.***.*!.***.***.*	618ns
+[11]	IntervalMapBench(10000,false).addRemove.***!***.****.*	587ns
+[12]	IntervalMapBench(100,true).iterate**********	6.04ns
+[13]	IntervalMapBench(100,false).iterate*********!*****!*!**********	6.05ns
+[14]	IntervalMapBench(1000,true).iterate..!.*.....*..	5.91ns
+[15]	IntervalMapBench(1000,false).iterate......!...*.....*	5.67ns
+[16]	IntervalMapBench(10000,true).iterate..!..!..........	8.44ns
+[17]	IntervalMapBench(10000,false).iterate..!..........	9.62ns
+[18]	IntervalMapBench(100,true).memory.!...	0.00ns
+[19]	IntervalMapBench(100,false).memory.....	41.9s
+[20]	IntervalMapBench(1000,true).memory!..!.	40.2s
+[21]	IntervalMapBench(1000,false).memory!!...	27.7s
+[22]	IntervalMapBench(10000,true).memory!!...	38.8s
+[23]	IntervalMapBench(10000,false).memory!!.!.	40.0s
+[24]	IntervalMapBench(100,true).overlappersInterval**********	1.93ns
+[25]	IntervalMapBench(100,false).overlappersInterval**********	44.4ns
+[26]	IntervalMapBench(1000,true).overlappersInterval**********	1.20ns
+[27]	IntervalMapBench(1000,false).overlappersInterval***********	49.7ns
+[28]	IntervalMapBench(10000,true).overlappersInterval...........!*.........	1.45ns
+[29]	IntervalMapBench(10000,false).overlappersInterval**********	64.6ns
+[30]	IntervalMapBench(100,true).overlappersPoint*****!***********	2.05ns
+[31]	IntervalMapBench(100,false).overlappersPoint**********	17.0ns
+[32]	IntervalMapBench(1000,true).overlappersPoint.**.**.***	1.58ns
+[33]	IntervalMapBench(1000,false).overlappersPoint**********	20.7ns
+[34]	IntervalMapBench(10000,true).overlappersPoint..........	1.43ns
+[35]	IntervalMapBench(10000,false).overlappersPoint*****!**********	30.1ns
+Success.

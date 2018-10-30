@@ -1,0 +1,27 @@
+Initializing Benchmarking Framework...
+Running on Linux 3.11.4-pf-i7
+Max heap = 7484735488 System Benchmark = 0.85ns
+Performing 8 benchmarking tasks..
+[0]	ArrayInsert(0).insertArrayElement..........	4.29ns
+[1]	ArrayInsert(1).insertArrayElement***********	28.3ns
+[2]	ArrayInsert(3).insertArrayElement**********	25.5ns
+[3]	ArrayInsert(5).insertArrayElement**********	25.9ns
+[4]	ArrayInsert(10).insertArrayElement***********	24.8ns
+[5]	ArrayInsert(20).insertArrayElement**********	25.5ns
+[6]	ArrayInsert(30).insertArrayElement**********	26.4ns
+[7]	ArrayInsert(40).insertArrayElement**********	27.0ns
+Success.
+
+Initializing Benchmarking Framework...
+Running on Linux 3.11.4-pf-i7
+Max heap = 7484735488 System Benchmark = 0.88ns
+Performing 8 benchmarking tasks..
+[0]	ArrayInsert(0).insertArrayElement............	4.28ns
+[1]	ArrayInsert(1).insertArrayElement**********	22.6ns
+[2]	ArrayInsert(3).insertArrayElement**********	22.4ns
+[3]	ArrayInsert(5).insertArrayElement**********	22.5ns
+[4]	ArrayInsert(10).insertArrayElement**********	23.0ns
+[5]	ArrayInsert(20).insertArrayElement**********	23.8ns
+[6]	ArrayInsert(30).insertArrayElement**********	24.6ns
+[7]	ArrayInsert(40).insertArrayElement**********	26.3ns
+Success.

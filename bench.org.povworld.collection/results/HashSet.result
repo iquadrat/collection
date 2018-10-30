@@ -1,0 +1,48 @@
+Initializing Benchmarking Framework...
+Running on Linux 3.11.4-pf-i7
+Max heap = 4116709376 System Benchmark = 0.86ns
+Performing 40 benchmarking tasks..
+[0]	StringHashSetBench(0).addExistingElement..........	4.15ns
+[1]	StringHashSetBench(1).addExistingElement..........	9.80ns
+[2]	StringHashSetBench(10).addExistingElement..........	7.51ns
+[3]	StringHashSetBench(100).addExistingElement...........	7.78ns
+[4]	StringHashSetBench(1000).addExistingElement...........	9.93ns
+[5]	StringHashSetBench(10000).addExistingElement....!..........	13.6ns
+[6]	StringHashSetBench(100000).addExistingElement.............	18.6ns
+[7]	StringHashSetBench(1000000).addExistingElement..!...........	49.3ns
+[8]	StringHashSetBench(0).addNewElement..*..*..*.	27.5ns
+[9]	StringHashSetBench(1).addNewElement..*.*..*..	40.8ns
+[10]	StringHashSetBench(10).addNewElement.....*....*	13.5ns
+[11]	StringHashSetBench(100).addNewElement.....*....	12.2ns
+[12]	StringHashSetBench(1000).addNewElement........*.	13.3ns
+[13]	StringHashSetBench(10000).addNewElement......!....*....*	15.3ns
+[14]	StringHashSetBench(100000).addNewElement...............	29.0ns
+[15]	StringHashSetBench(1000000).addNewElement...!.......!..............*......	55.0ns
+[16]	StringHashSetBench(0).getContainedElement..........	4.17ns
+[17]	StringHashSetBench(1).getContainedElement..........	10.0ns
+[18]	StringHashSetBench(10).getContainedElement...........	10.2ns
+[19]	StringHashSetBench(100).getContainedElement..........	9.22ns
+[20]	StringHashSetBench(1000).getContainedElement..........	12.7ns
+[21]	StringHashSetBench(10000).getContainedElement....!..........	13.5ns
+[22]	StringHashSetBench(100000).getContainedElement...........	22.5ns
+[23]	StringHashSetBench(1000000).getContainedElement...!...........	53.0ns
+[24]	StringHashSetBench(0).getNotContainedKey..........	4.16ns
+[25]	StringHashSetBench(1).getNotContainedKey..........	9.73ns
+[26]	StringHashSetBench(10).getNotContainedKey..........	8.39ns
+[27]	StringHashSetBench(100).getNotContainedKey..........	7.62ns
+[28]	StringHashSetBench(1000).getNotContainedKey..........	10.3ns
+[29]	StringHashSetBench(10000).getNotContainedKey.......!..........	12.2ns
+[30]	StringHashSetBench(100000).getNotContainedKey............	18.9ns
+[31]	StringHashSetBench(1000000).getNotContainedKey..!..........	44.4ns
+[32]	StringHashSetBench(0).memory.....	20100s
+[33]	StringHashSetBench(1).memory.....	176s
+[34]	StringHashSetBench(10).memory.....	32.0s
+[35]	StringHashSetBench(100).memory.....	14.4s
+[36]	StringHashSetBench(1000).memory.....	10.4s
+[37]	StringHashSetBench(10000).memory.....	16.4s
+[38]	StringHashSetBench(100000).memory!!...	13.1s
+[39]	StringHashSetBench(1000000).memory!!...	10.5s
+Success.
+
+// Mit hash strengthing:
+

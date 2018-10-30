@@ -1,0 +1,45 @@
+Initializing Benchmarking Framework...
+Running on Linux 4.13.0-pf4amd
+Max heap = 7486832640 System Benchmark = 0.77ns
+Performing 40 benchmarking tasks..
+[0]	TreeSetStringBench(0).addExistingElement..........	5.77ns
+[1]	TreeSetStringBench(1).addExistingElement.............	12.0ns
+[2]	TreeSetStringBench(10).addExistingElement**********	19.4ns
+[3]	TreeSetStringBench(100).addExistingElement********!**********	41.1ns
+[4]	TreeSetStringBench(1000).addExistingElement!****!**********	94.8ns
+[5]	TreeSetStringBench(10000).addExistingElement!**********	188ns
+[6]	TreeSetStringBench(100000).addExistingElement!*...*..*..*..*..*..*.!..*.!..*!.*..*!..*..*..*.*	343ns
+[7]	TreeSetStringBench(1000000).addExistingElement!*..*...*..	779ns
+[8]	TreeSetStringBench(0).addNewElement**********	14.7ns
+[9]	TreeSetStringBench(1).addNewElement***********	21.6ns
+[10]	TreeSetStringBench(10).addNewElement.****!**********	33.7ns
+[11]	TreeSetStringBench(100).addNewElement!!!**********	71.8ns
+[12]	TreeSetStringBench(1000).addNewElement.!**!*!*.!.!!!!!!**!*!!!*!!!*!**!.!**!!!!**!*!**!*!!!*!**!*!**!*!**!*!**!!!*!**!*!**!*!**!*!**!*!**!*!*!!!*!**!*!!!*!**!*!!!*!**!**!*!**!*!**!**!*!**!!!*!**!*!**!*!**!**!*!*!**!*!**!*!**!*!**!*!**!*!**!**!*!**!*!**!*!**!*!!!*!**!*!**!*!!!*!**!*!**!*!!!*!**!*!**!*!**!**!*!**!**!*!**!*!**!*!**!*!**!*!**!*!**!*!**!**!*!**!*!**!**!*!**!**!*!**!*!**!*!**!*!!!*!**!*!**!*!**!*!**!*!**!*!**!*!**!*!**!**!*!*!!!*!**!**!*!**!*!**!*!**!*!**!*!!!**!*!**!*!**!**!*!**!*!**!*!**!**!*!**!**!*!**!*!**!*!**********	157ns
+[13]	TreeSetStringBench(10000).addNewElement.*!*.**.**.**	273ns
+[14]	TreeSetStringBench(100000).addNewElement..!.*..*..*.*..*.*..*..*.*..*..*.*..*..*.!.*.*..!.!*..*.*..*..*.*..*..*.*..*..*.*..*..*.*..*.*..*..*.*..*..*.*..*..*.*..*..*.*..*..*.*..*..*.*..*.	470ns
+[15]	TreeSetStringBench(1000000).addNewElement!.*..*...*...!...*....*.	1.06us
+[16]	TreeSetStringBench(0).getContainedElement..........	5.78ns
+[17]	TreeSetStringBench(1).getContainedElement...........	11.7ns
+[18]	TreeSetStringBench(10).getContainedElement..........	12.1ns
+[19]	TreeSetStringBench(100).getContainedElement............	23.5ns
+[20]	TreeSetStringBench(1000).getContainedElement!.............	78.0ns
+[21]	TreeSetStringBench(10000).getContainedElement!..........	157ns
+[22]	TreeSetStringBench(100000).getContainedElement.!..............................!..........	294ns
+[23]	TreeSetStringBench(1000000).getContainedElement!..........	696ns
+[24]	TreeSetStringBench(0).getNotContainedKey..........	5.80ns
+[25]	TreeSetStringBench(1).getNotContainedKey...........	13.4ns
+[26]	TreeSetStringBench(10).getNotContainedKey...........	14.5ns
+[27]	TreeSetStringBench(100).getNotContainedKey......!..........	29.5ns
+[28]	TreeSetStringBench(1000).getNotContainedKey!..........	99.0ns
+[29]	TreeSetStringBench(10000).getNotContainedKey.!...........	195ns
+[30]	TreeSetStringBench(100000).getNotContainedKey..!..........	343ns
+[31]	TreeSetStringBench(1000000).getNotContainedKey!..........	815ns
+[32]	TreeSetStringBench(0).memory.....	0.00ns
+[33]	TreeSetStringBench(1).memory...!.	208s
+[34]	TreeSetStringBench(10).memory.....	49.6s
+[35]	TreeSetStringBench(100).memory.....	33.8s
+[36]	TreeSetStringBench(1000).memory!....	32.2s
+[37]	TreeSetStringBench(10000).memory!!!..	32.0s
+[38]	TreeSetStringBench(100000).memory!!...	32.0s
+[39]	TreeSetStringBench(1000000).memory!!...	32.0s
+Success.

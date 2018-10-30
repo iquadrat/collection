@@ -1,0 +1,29 @@
+Initializing Benchmarking Framework...
+Running on Linux 3.11.4-pf-i7
+Max heap = 7484735488 System Benchmark = 0.94ns
+Performing 24 benchmarking tasks..
+[0]	ConcurrentIntrusiveLinkedCollectionBench(1000).insertBack!..!.!!..!....!!....!....!...!...........	21.3ns
+[1]	ConcurrentIntrusiveLinkedCollectionBench(10000).insertBack!!..!!!...!...!!.....................................	8.62ns
+[2]	ConcurrentIntrusiveLinkedCollectionBench(100000).insertBack!!.!.!!.!.....!!...........	9.39ns
+[3]	ConcurrentIntrusiveLinkedCollectionBench(1000000).insertBack!!.!.!!.......!!.......................	8.72ns
+[4]	ConcurrentIntrusiveLinkedCollectionBench(1000).insertFront...!!!..!.!!..!!........!.!...!.!...................!............................!.................	7.72ns
+[5]	ConcurrentIntrusiveLinkedCollectionBench(10000).insertFront!!!!!!!!......!!..!..!......!..............	9.64ns
+[6]	ConcurrentIntrusiveLinkedCollectionBench(100000).insertFront!!.!!....!.!..!!...................................	8.83ns
+[7]	ConcurrentIntrusiveLinkedCollectionBench(1000000).insertFront!!.!!.........!!..........	9.00ns
+[8]	ConcurrentIntrusiveLinkedCollectionBench(1000).iterate..........	5.49ns
+[9]	ConcurrentIntrusiveLinkedCollectionBench(10000).iterate....!..........	19.7ns
+[10]	ConcurrentIntrusiveLinkedCollectionBench(100000).iterate..........	19.5ns
+[11]	ConcurrentIntrusiveLinkedCollectionBench(1000000).iterate!..........	20.0ns
+[12]	ConcurrentIntrusiveLinkedCollectionBench(1000).removeHead.!.!!....!!!!!!!..!!..!...!!.!.!!....................!......................!..........	10.9ns
+[13]	ConcurrentIntrusiveLinkedCollectionBench(10000).removeHead!!!!.!.!......!!...!......................................................	9.99ns
+[14]	ConcurrentIntrusiveLinkedCollectionBench(100000).removeHead!!..!!!.!.....!!..................	12.6ns
+[15]	ConcurrentIntrusiveLinkedCollectionBench(1000000).removeHead!!.!!!!.......!!.............	12.1ns
+[16]	ConcurrentIntrusiveLinkedCollectionBench(1000).removeRandom...!!.....!.!!!!...!!.!!..!!...!.....................	11.8ns
+[17]	ConcurrentIntrusiveLinkedCollectionBench(10000).removeRandom!!!!.!.!......!!.......................................................	14.0ns
+[18]	ConcurrentIntrusiveLinkedCollectionBench(100000).removeRandom!!.!.!!.!.....!!........................................................................!...............................!............................!.....!....................................................................................................	25.2ns
+[19]	ConcurrentIntrusiveLinkedCollectionBench(1000000).removeRandom!!.!.!!.......!!....................................................................	70.1ns
+[20]	ConcurrentIntrusiveLinkedCollectionBench(1000).rotateTail...!!.....!.!!!!...!!..!!!...!..!..............................!..........	10.9ns
+[21]	ConcurrentIntrusiveLinkedCollectionBench(10000).rotateTail!!!!.!.!......!!.................	9.91ns
+[22]	ConcurrentIntrusiveLinkedCollectionBench(100000).rotateTail!..!!!!..!....!!...............!..............................	12.4ns
+[23]	ConcurrentIntrusiveLinkedCollectionBench(1000000).rotateTail!!.!!!!.......!!..........	12.3ns
+Success.

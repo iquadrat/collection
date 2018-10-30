@@ -1,0 +1,53 @@
+Initializing Benchmarking Framework...
+Running on Linux 3.11.4-pf-i7
+Max heap = 7484735488 System Benchmark = 0.89ns
+Performing 49 benchmarking tasks..
+[0]	IndexedHashBagStringBench(0).clearAdd..........	5.58ns
+[1]	IndexedHashBagStringBench(1).clearAdd..........	10.8ns
+[2]	IndexedHashBagStringBench(10).clearAdd...........	4.70ns
+[3]	IndexedHashBagStringBench(100).clearAdd**********	27.6ns
+[4]	IndexedHashBagStringBench(1000).clearAdd!************	31.2ns
+[5]	IndexedHashBagStringBench(10000).clearAdd!!**********	54.2ns
+[6]	IndexedHashBagStringBench(100000).clearAdd**.!*.**!**.*****.*!!*******************	63.4ns
+[7]	IndexedHashBagStringBench(0).containsContained**********	5.55ns
+[8]	IndexedHashBagStringBench(1).containsContained**********	10.8ns
+[9]	IndexedHashBagStringBench(10).containsContained..*.*.*.**.*.	13.9ns
+[10]	IndexedHashBagStringBench(100).containsContained......*...	4.30ns
+[11]	IndexedHashBagStringBench(1000).containsContained..........	13.4ns
+[12]	IndexedHashBagStringBench(10000).containsContained...!...........	11.5ns
+[13]	IndexedHashBagStringBench(100000).containsContained.....................................	24.1ns
+[14]	IndexedHashBagStringBench(0).containsNotContained**********	5.56ns
+[15]	IndexedHashBagStringBench(1).containsNotContained**********	11.3ns
+[16]	IndexedHashBagStringBench(10).containsNotContained...*...*..	23.3ns
+[17]	IndexedHashBagStringBench(100).containsNotContained.......*..	5.70ns
+[18]	IndexedHashBagStringBench(1000).containsNotContained............	13.6ns
+[19]	IndexedHashBagStringBench(10000).containsNotContained...!...........	13.8ns
+[20]	IndexedHashBagStringBench(100000).containsNotContained..........	19.7ns
+[21]	IndexedHashBagStringBench(0).getRandom..........	4.03ns
+[22]	IndexedHashBagStringBench(1).getRandom..........	6.14ns
+[23]	IndexedHashBagStringBench(10).getRandom..........	1.54ns
+[24]	IndexedHashBagStringBench(100).getRandom..........	0.91ns
+[25]	IndexedHashBagStringBench(1000).getRandom...........	0.76ns
+[26]	IndexedHashBagStringBench(10000).getRandom..........	0.77ns
+[27]	IndexedHashBagStringBench(100000).getRandom.....!..........	1.37ns
+[28]	IndexedHashBagStringBench(0).iterate**********	11.0ns
+[29]	IndexedHashBagStringBench(1).iterate**********	10.3ns
+[30]	IndexedHashBagStringBench(10).iterate**********	1.56ns
+[31]	IndexedHashBagStringBench(100).iterate**********	0.62ns
+[32]	IndexedHashBagStringBench(1000).iterate..*.*.*.*.	0.60ns
+[33]	IndexedHashBagStringBench(10000).iterate..........	0.59ns
+[34]	IndexedHashBagStringBench(100000).iterate!..........	0.58ns
+[35]	IndexedHashBagStringBench(0).removeNotContained.............	4.31ns
+[36]	IndexedHashBagStringBench(1).removeNotContained..........	10.1ns
+[37]	IndexedHashBagStringBench(10).removeNotContained..........	23.2ns
+[38]	IndexedHashBagStringBench(100).removeNotContained..........	5.12ns
+[39]	IndexedHashBagStringBench(1000).removeNotContained..........	14.4ns
+[40]	IndexedHashBagStringBench(10000).removeNotContained.....!..........	15.8ns
+[41]	IndexedHashBagStringBench(100000).removeNotContained..........	23.1ns
+[42]	IndexedHashBagStringBench(0).removeRandomAdd..........	4.33ns
+[43]	IndexedHashBagStringBench(1).removeRandomAdd..........	25.4ns
+[44]	IndexedHashBagStringBench(10).removeRandomAdd..........	29.5ns
+[45]	IndexedHashBagStringBench(100).removeRandomAdd**********	278ns
+[46]	IndexedHashBagStringBench(1000).removeRandomAdd....!..*.......	2.52us
+[47]	IndexedHashBagStringBench(10000).removeRandomAdd!..........	41.4us
+[48]	IndexedHashBagStringBench(100000).removeRandomAdd!.....

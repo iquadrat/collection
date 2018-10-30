@@ -1,0 +1,53 @@
+Initializing Benchmarking Framework...
+Running on Linux 3.11.4-pf-i7
+Max heap = 7484735488 System Benchmark = 0.84ns
+Performing 48 benchmarking tasks..
+[0]	PersistentHashSet3IntBench(0)._emory.....	112s
+[1]	PersistentHashSet3IntBench(1)._emory.....	200s
+[2]	PersistentHashSet3IntBench(10)._emory.....	26.4s
+[3]	PersistentHashSet3IntBench(100)._emory!....	12.5s
+[4]	PersistentHashSet3IntBench(1000)._emory..!!.	10.7s
+[5]	PersistentHashSet3IntBench(10000)._emory!!...	10.9s
+[6]	PersistentHashSet3IntBench(100000)._emory!....	10.8s
+[7]	PersistentHashSet3IntBench(1000000)._emory.!...	10.7s
+[8]	PersistentHashSet3IntBench(0).addAllMerge.........................	8.41ns
+[9]	PersistentHashSet3IntBench(1).addAllMerge..*..*.*....*....*.	69.6ns
+[10]	PersistentHashSet3IntBench(10).addAllMerge...*...*...*	67.1ns
+[11]	PersistentHashSet3IntBench(100).addAllMerge..*..*..*.	94.3ns
+[12]	PersistentHashSet3IntBench(1000).addAllMerge...*..*..*	149ns
+[13]	PersistentHashSet3IntBench(10000).addAllMerge...*..*..*	190ns
+[14]	PersistentHashSet3IntBench(100000).addAllMerge..*..*..*.	262ns
+[15]	PersistentHashSet3IntBench(1000000).addAllMerge..*.*..*.*	406ns
+[16]	PersistentHashSet3IntBench(0).addAllSelf..........	6.21ns
+[17]	PersistentHashSet3IntBench(1).addAllSelf..*.*..*.*	46.9ns
+[18]	PersistentHashSet3IntBench(10).addAllSelf..........	22.1ns
+[19]	PersistentHashSet3IntBench(100).addAllSelf..........	27.2ns
+[20]	PersistentHashSet3IntBench(1000).addAllSelf..........	28.0ns
+[21]	PersistentHashSet3IntBench(10000).addAllSelf..........	34.1ns
+[22]	PersistentHashSet3IntBench(100000).addAllSelf..........	33.8ns
+[23]	PersistentHashSet3IntBench(1000000).addAllSelf................	45.0ns
+[24]	PersistentHashSet3IntBench(0).addNewElement..........	4.07ns
+[25]	PersistentHashSet3IntBench(1).addNewElement....*...*.	58.2ns
+[26]	PersistentHashSet3IntBench(10).addNewElement..*.*.*.*.	62.4ns
+[27]	PersistentHashSet3IntBench(100).addNewElement.*********	81.9ns
+[28]	PersistentHashSet3IntBench(1000).addNewElement**********	121ns
+[29]	PersistentHashSet3IntBench(10000).addNewElement**********	196ns
+[30]	PersistentHashSet3IntBench(100000).addNewElement**********	200ns
+[31]	PersistentHashSet3IntBench(1000000).addNewElement*****.*.*.*.*.*	366ns
+[32]	PersistentHashSet3IntBench(0).getContainedElement..........	4.05ns
+[33]	PersistentHashSet3IntBench(1).getContainedElement............	16.1ns
+[34]	PersistentHashSet3IntBench(10).getContainedElement..........	13.1ns
+[35]	PersistentHashSet3IntBench(100).getContainedElement..........	16.5ns
+[36]	PersistentHashSet3IntBench(1000).getContainedElement..........	18.0ns
+[37]	PersistentHashSet3IntBench(10000).getContainedElement..........	27.0ns
+[38]	PersistentHashSet3IntBench(100000).getContainedElement..........	33.0ns
+[39]	PersistentHashSet3IntBench(1000000).getContainedElement...........	106ns
+[40]	PersistentHashSet3IntBench(0).getNotContainedKey..........	4.05ns
+[41]	PersistentHashSet3IntBench(1).getNotContainedKey..........	12.7ns
+[42]	PersistentHashSet3IntBench(10).getNotContainedKey..........	9.71ns
+[43]	PersistentHashSet3IntBench(100).getNotContainedKey..........	14.5ns
+[44]	PersistentHashSet3IntBench(1000).getNotContainedKey..........	17.6ns
+[45]	PersistentHashSet3IntBench(10000).getNotContainedKey..........	27.0ns
+[46]	PersistentHashSet3IntBench(100000).getNotContainedKey..........	29.6ns
+[47]	PersistentHashSet3IntBench(1000000).getNotContainedKey.......................	53.4ns
+Success.

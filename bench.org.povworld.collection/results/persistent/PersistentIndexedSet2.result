@@ -1,0 +1,47 @@
+Initializing Benchmarking Framework...
+Running on Linux 3.11.4-pf-i7
+Max heap = 7484735488 System Benchmark = 0.89ns
+Performing 42 benchmarking tasks..
+[0]	PersistentIndexedSet2Bench(0).addAllNewElement**********	7.09ns
+[1]	PersistentIndexedSet2Bench(1).addAllNewElement..........	4.80ns
+[2]	PersistentIndexedSet2Bench(10).addAllNewElement..........	0.48ns
+[3]	PersistentIndexedSet2Bench(100).addAllNewElement..........	0.05ns
+[4]	PersistentIndexedSet2Bench(1000).addAllNewElement..........	0.00ns
+[5]	PersistentIndexedSet2Bench(10000).addAllNewElement..........	0.00ns
+[6]	PersistentIndexedSet2Bench(0).addNewElement..........	4.24ns
+[7]	PersistentIndexedSet2Bench(1).addNewElement**********	89.1ns
+[8]	PersistentIndexedSet2Bench(10).addNewElement**********	343ns
+[9]	PersistentIndexedSet2Bench(100).addNewElement*!**********	627ns
+[10]	PersistentIndexedSet2Bench(1000).addNewElement**********	894ns
+[11]	PersistentIndexedSet2Bench(10000).addNewElement!**********	1.98us
+[12]	PersistentIndexedSet2Bench(0).duplicate..........	5.08ns
+[13]	PersistentIndexedSet2Bench(1).duplicate**********	42.2ns
+[14]	PersistentIndexedSet2Bench(10).duplicate**********	232ns
+[15]	PersistentIndexedSet2Bench(100).duplicate*!**********	568ns
+[16]	PersistentIndexedSet2Bench(1000).duplicate*********!******!!**********	960ns
+[17]	PersistentIndexedSet2Bench(10000).duplicate**********	1.68us
+[18]	PersistentIndexedSet2Bench(0).getContainedElement..........	4.23ns
+[19]	PersistentIndexedSet2Bench(1).getContainedElement..........	10.9ns
+[20]	PersistentIndexedSet2Bench(10).getContainedElement..........	10.7ns
+[21]	PersistentIndexedSet2Bench(100).getContainedElement..........	14.4ns
+[22]	PersistentIndexedSet2Bench(1000).getContainedElement..........	25.1ns
+[23]	PersistentIndexedSet2Bench(10000).getContainedElement..........	45.2ns
+[24]	PersistentIndexedSet2Bench(0).getNotContainedKey..........	4.21ns
+[25]	PersistentIndexedSet2Bench(1).getNotContainedKey..........	9.92ns
+[26]	PersistentIndexedSet2Bench(10).getNotContainedKey..........	10.7ns
+[27]	PersistentIndexedSet2Bench(100).getNotContainedKey...........	9.57ns
+[28]	PersistentIndexedSet2Bench(1000).getNotContainedKey..........	21.5ns
+[29]	PersistentIndexedSet2Bench(10000).getNotContainedKey..............	38.1ns
+[30]	PersistentIndexedSet2Bench(0).getRandomIndex...........	4.27ns
+[31]	PersistentIndexedSet2Bench(1).getRandomIndex..........	6.95ns
+[32]	PersistentIndexedSet2Bench(10).getRandomIndex...........	4.82ns
+[33]	PersistentIndexedSet2Bench(100).getRandomIndex..........	6.85ns
+[34]	PersistentIndexedSet2Bench(1000).getRandomIndex!..........	42.3ns
+[35]	PersistentIndexedSet2Bench(10000).getRandomIndex...........	83.7ns
+[36]	PersistentIndexedSet2Bench(0).memory.....	112s
+[37]	PersistentIndexedSet2Bench(1).memory.....	216s
+[38]	PersistentIndexedSet2Bench(10).memory.....	67.2s
+[39]	PersistentIndexedSet2Bench(100).memory...!.	73.5s
+[40]	PersistentIndexedSet2Bench(1000).memory!!!!.	49.4s
+[41]	PersistentIndexedSet2Bench(10000).memory!!...	69.0s
+Success.
