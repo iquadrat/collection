@@ -79,6 +79,7 @@ public class IntervalMap<V> {
         
         @Override
         public int hashCode(IntervalNode<V> node) {
+            // This comparator is never publicly exposed and internally we do not use hash codes.
             throw new UnsupportedOperationException();
         }
         

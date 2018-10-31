@@ -286,25 +286,29 @@ public class HashSet<E> extends AbstractUnOrderedCollection<E> implements Set<E>
     
     @Override
     public Iterator<E> iterator() {
+        return new HashSetIterator();
+    }
+    
+    public Iterator<E> modifyingIterator() {
         return new HashSetIterator() {
             @Override
             public void remove() {
-                throw new UnsupportedOperationException();
+                if (current == -1) {
+                    throw new IllegalStateException();
+                }
+                HashSet.this.remove(iteratingTable[current]);
+                current = -1;
             }
         };
     }
     
-    public Iterator<E> modifyingIterator() {
-        return new HashSetIterator();
-    }
-    
     private class HashSetIterator implements Iterator<E> {
         
-        private final E[] iteratingTable;
+        protected final E[] iteratingTable;
         
-        private int next = -1;
+        protected int next = -1;
         
-        private int current = -1;
+        protected int current = -1;
         
         HashSetIterator() {
             iteratingTable = table;
@@ -333,13 +337,6 @@ public class HashSet<E> extends AbstractUnOrderedCollection<E> implements Set<E>
                 next++;
                 if (next >= iteratingTable.length) break;
             } while (iteratingTable[next] == null);
-        }
-        
-        @Override
-        public void remove() {
-            if (current == -1) throw new IllegalStateException();
-            HashSet.this.remove(iteratingTable[current]);
-            current = -1;
         }
         
     }
@@ -404,5 +401,5 @@ public class HashSet<E> extends AbstractUnOrderedCollection<E> implements Set<E>
         }
         
     }
-
+    
 }

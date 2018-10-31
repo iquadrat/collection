@@ -190,11 +190,6 @@ public class PerfectHashSet<E> extends AbstractUnOrderedCollection<E> implements
             }
         }
         
-        @Override
-        public void remove() {
-            throw new UnsupportedOperationException();
-        }
-        
     }
     
     public static <E> CollectionBuilder<E, ImmutableSet<E>> newBuilder() {

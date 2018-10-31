@@ -499,7 +499,7 @@ public class TreeList<E> extends AbstractOrderedCollection<E> implements Contain
      * @return the element previously at {@code index}
      * @throws IndexOutOfBoundsException if {@code index < 0} or {@code index >= size}
      */
-    public E removeIndex(int index) {
+    public E removeElementAt(int index) {
         // TODO merge into single tree operation
         TreeListNode<E> node = getTreeNode(index);
         setIndexTree(getIndexTreeManager().remove(indexTree, index));

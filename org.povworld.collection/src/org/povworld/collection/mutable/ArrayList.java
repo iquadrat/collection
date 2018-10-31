@@ -105,11 +105,6 @@ public class ArrayList<E> extends AbstractOrderedCollection<E> implements List<E
             nextIndex++;
             return next;
         }
-        
-        @Override
-        public void remove() {
-            throw new UnsupportedOperationException();
-        }
     }
     
     @Override

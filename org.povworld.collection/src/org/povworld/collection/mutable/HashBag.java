@@ -204,6 +204,8 @@ public class HashBag<E> extends AbstractUnOrderedCollection<E> implements Bag<E>
         return new HashBagIterator();
     }
     
+    // TODO add modifyingIterator()
+    
     private class HashBagIterator implements Iterator<E> {
         
         private final EntryIterator<E, Count> hashSetIterator = countMap.entryIterator();
@@ -236,12 +238,6 @@ public class HashBag<E> extends AbstractUnOrderedCollection<E> implements Bag<E>
             if (hashSetIterator.next()) {
                 elementsLeftInCurrent = hashSetIterator.getCurrentValue().getValue();
             }
-        }
-        
-        @Override
-        public void remove() {
-            // TODO support removal
-            throw new UnsupportedOperationException();
         }
         
     }

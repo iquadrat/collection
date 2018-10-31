@@ -15,7 +15,6 @@ import org.povworld.collection.common.PreConditions;
  * Does not support removal of individual elements as this would be expensive. 
  * If removal is required, use a {@link IndexedTreeSet}.
  * 
- * 
  * @param <E> the element type
  */
 //TODO implement IndexedTreeSet

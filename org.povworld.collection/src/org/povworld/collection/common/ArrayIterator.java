@@ -34,9 +34,4 @@ public class ArrayIterator<E> implements Iterator<E> {
         return ObjectUtil.checkNotNull(elements[next++]);
     }
     
-    @Override
-    public void remove() {
-        throw new UnsupportedOperationException();
-    }
-    
 }

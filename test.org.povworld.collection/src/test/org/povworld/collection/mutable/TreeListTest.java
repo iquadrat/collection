@@ -55,9 +55,9 @@ public class TreeListTest extends AbstractListTest<TreeList<String>> {
         assertEquals(2, collectionThree.indexOf("three"));
         assertEquals(3, collectionThree.indexOf("four"));
         
-        collectionThree.removeIndex(0);
-        collectionThree.removeIndex(0);
-        collectionThree.removeIndex(0);
+        collectionThree.removeElementAt(0);
+        collectionThree.removeElementAt(0);
+        collectionThree.removeElementAt(0);
         
         assertEquals(3, collectionThree.indexOf("one"));
         assertEquals(2, collectionThree.indexOf("two"));
@@ -86,9 +86,9 @@ public class TreeListTest extends AbstractListTest<TreeList<String>> {
         assertEquals(4, collectionThree.lastIndexOf("three"));
         assertEquals(3, collectionThree.lastIndexOf("four"));
         
-        collectionThree.removeIndex(5);
-        collectionThree.removeIndex(3);
-        collectionThree.removeIndex(0);
+        collectionThree.removeElementAt(5);
+        collectionThree.removeElementAt(3);
+        collectionThree.removeElementAt(0);
         
         // 2 3 3 1 
         

@@ -75,11 +75,6 @@ public class CompoundIterable<T> implements Iterable<T> {
             if (!currentIter.hasNext()) findNextIter();
             return result;
         }
-        
-        @Override
-        public void remove() {
-            throw new UnsupportedOperationException();
-        }
     }
     
 }

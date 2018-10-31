@@ -12,6 +12,7 @@ import org.povworld.collection.Collection;
 import org.povworld.collection.common.AbstractCollectionBuilder;
 import org.povworld.collection.common.AbstractOrderedCollection;
 import org.povworld.collection.common.ArrayUtil;
+import org.povworld.collection.common.Assert;
 import org.povworld.collection.common.PreConditions;
 import org.povworld.collection.common.ReverseListIterator;
 import org.povworld.collection.mutable.ArrayList;
@@ -108,7 +109,7 @@ public class PersistentArrayList<E> extends AbstractOrderedCollection<E> impleme
         
         @Override
         public Bucket<E>[] split() {
-            throw new UnsupportedOperationException("Empty bucket cannot be split");
+            throw Assert.fail("Empty bucket cannot be split");
         }
         
     }
@@ -453,12 +454,6 @@ public class PersistentArrayList<E> extends AbstractOrderedCollection<E> impleme
             currentElement = null;
             return false;
         }
-        
-        @Override
-        public void remove() {
-            throw new UnsupportedOperationException();
-        }
-        
     }
     
     @Override
