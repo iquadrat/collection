@@ -10,17 +10,17 @@ import javax.annotation.CheckForNull;
 
 import org.junit.Test;
 import org.povworld.collection.immutable.ImmutableCollections;
-import org.povworld.collection.mutable.LinkedOrderedCollection;
+import org.povworld.collection.mutable.LinkedSequence;
 
 import test.org.povworld.collection.AbstractOrderedCollectionTest;
 
 /**
- * Unit tests for {@link LinkedOrderedCollection}.
+ * Unit tests for {@link LinkedSequence}.
  */
-public class LinkedOrderedCollectionTest extends AbstractOrderedCollectionTest<LinkedOrderedCollection<String>> {
+public class LinkedSequenceTest extends AbstractOrderedCollectionTest<LinkedSequence<String>> {
     
-    public LinkedOrderedCollectionTest() {
-        super(LinkedOrderedCollection.newBuilder());
+    public LinkedSequenceTest() {
+        super(LinkedSequence.newBuilder());
     }
     
     @Override
@@ -30,7 +30,7 @@ public class LinkedOrderedCollectionTest extends AbstractOrderedCollectionTest<L
     }
     
     @Override
-    protected Iterator<String> modifyingIterator(LinkedOrderedCollection<String> collection) {
+    protected Iterator<String> modifyingIterator(LinkedSequence<String> collection) {
         return collection.modifyingIterator();
     }
     

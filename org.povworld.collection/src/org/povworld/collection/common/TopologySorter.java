@@ -5,7 +5,7 @@ import org.povworld.collection.CollectionBuilder;
 import org.povworld.collection.EntryIterator;
 import org.povworld.collection.mutable.ArrayList;
 import org.povworld.collection.mutable.HashMap;
-import org.povworld.collection.mutable.LinkedOrderedCollection;
+import org.povworld.collection.mutable.LinkedSequence;
 
 /**
  * Class to topologically sort structures.
@@ -43,7 +43,7 @@ public class TopologySorter<T, C extends Collection<T>> {
     
     private final HashMap<T, Entry> dependencies = new HashMap<T, Entry>();
     
-    private final LinkedOrderedCollection<T> freeNodes = new LinkedOrderedCollection<T>();
+    private final LinkedSequence<T> freeNodes = new LinkedSequence<T>();
     
     private final Topology<T> topology;
     

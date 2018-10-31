@@ -8,6 +8,7 @@ import javax.annotation.Nullable;
 import javax.annotation.concurrent.NotThreadSafe;
 
 import org.povworld.collection.CollectionBuilder;
+import org.povworld.collection.Sequence;
 import org.povworld.collection.common.AbstractCollectionBuilder;
 import org.povworld.collection.common.AbstractOrderedCollection;
 import org.povworld.collection.mutable.IntrusiveLinkedSequence.ElementLink;
@@ -18,7 +19,7 @@ import org.povworld.collection.mutable.IntrusiveLinkedSequence.ElementLink;
  * @param <E> the element type 
  */
 @NotThreadSafe
-public class LinkedOrderedCollection<E> extends AbstractOrderedCollection<E> {
+public class LinkedSequence<E> extends AbstractOrderedCollection<E> implements Sequence<E> {
     
     private static class LinkIterator<T> implements Iterator<T> {
         
@@ -102,14 +103,14 @@ public class LinkedOrderedCollection<E> extends AbstractOrderedCollection<E> {
         return new LinkIterator<>(delegate.modifyingIterator());
     }
     
-    public static CollectionBuilder<String, LinkedOrderedCollection<String>> newBuilder() {
+    public static CollectionBuilder<String, LinkedSequence<String>> newBuilder() {
         return new Builder<>();
     }
     
     @NotThreadSafe
-    public static class Builder<E> extends AbstractCollectionBuilder<E, LinkedOrderedCollection<E>> {
+    public static class Builder<E> extends AbstractCollectionBuilder<E, LinkedSequence<E>> {
         @Nullable
-        private LinkedOrderedCollection<E> collection = new LinkedOrderedCollection<>();
+        private LinkedSequence<E> collection = new LinkedSequence<>();
         
         @Override
         protected void _add(E element) {
@@ -118,12 +119,12 @@ public class LinkedOrderedCollection<E> extends AbstractOrderedCollection<E> {
         
         @Override
         protected void _reset() {
-            collection = new LinkedOrderedCollection<>();
+            collection = new LinkedSequence<>();
         }
         
         @Override
-        protected LinkedOrderedCollection<E> _createCollection() {
-            LinkedOrderedCollection<E> result = collection;
+        protected LinkedSequence<E> _createCollection() {
+            LinkedSequence<E> result = collection;
             collection = null;
             return result;
         }
