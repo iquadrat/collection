@@ -25,7 +25,7 @@ import org.povworld.collection.tree.TreeUtil;
 // TODO implement on higher-fanout tree?
 public class PersistentTreeList<E> extends AbstractOrderedCollection<E> implements PersistentList<E> {
     
-    protected static class TreeListManager<E> extends AbstractAvlTreeBuilder<ListTreeNode<E>> {
+    protected static class TreeListBuilder<E> extends AbstractAvlTreeBuilder<ListTreeNode<E>> {
         
         @Override
         public ListTreeNode<E> createSubTree(ListTreeNode<E> left, ListTreeNode<E> top, ListTreeNode<E> right) {
@@ -69,6 +69,7 @@ public class PersistentTreeList<E> extends AbstractOrderedCollection<E> implemen
             }
             
             // found the element to remove
+            dispose(tree);
             if (tree.getRight() == null) {
                 return tree.getLeft();
             }
@@ -78,6 +79,8 @@ public class PersistentTreeList<E> extends AbstractOrderedCollection<E> implemen
             ListTreeNode<E> newRight = remove(tree.getRight(), 0);
             return balance(tree.getLeft(), successor, newRight);
         }
+        
+        protected void dispose(ListTreeNode<E> node) {}
         
         @CheckForNull
         E get(@CheckForNull ListTreeNode<E> tree, int position) {
@@ -160,7 +163,7 @@ public class PersistentTreeList<E> extends AbstractOrderedCollection<E> implemen
         return node == null ? 0 : node.size;
     }
     
-    private static final TreeListManager<Object> TREE_MANAGER = new TreeListManager<Object>();
+    private static final TreeListBuilder<Object> TREE_MANAGER = new TreeListBuilder<Object>();
     
     private static class EmptyList<E> extends AbstractOrderedCollection<E> implements PersistentList<E> {
         
@@ -247,8 +250,8 @@ public class PersistentTreeList<E> extends AbstractOrderedCollection<E> implemen
     private static final PersistentList<Object> EMPTY = new EmptyList<>();
     
     @SuppressWarnings({"unchecked"})
-    protected TreeListManager<E> getTreeManager() {
-        return (TreeListManager<E>)TREE_MANAGER;
+    protected TreeListBuilder<E> getTreeManager() {
+        return (TreeListBuilder<E>)TREE_MANAGER;
     }
     
     @SuppressWarnings("unchecked")

@@ -2,6 +2,8 @@ package test.org.povworld.collection.persistent;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotSame;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
@@ -12,11 +14,8 @@ import org.povworld.collection.CollectionBuilder;
 import org.povworld.collection.CollectionUtil;
 import org.povworld.collection.List;
 import org.povworld.collection.OrderedSet;
-import org.povworld.collection.common.ObjectUtil;
 import org.povworld.collection.immutable.ImmutableCollections;
-import org.povworld.collection.mutable.TreeSet;
 import org.povworld.collection.persistent.PersistentOrderedSet;
-import org.povworld.collection.persistent.PersistentTreeSet;
 
 import test.org.povworld.collection.AbstractOrderedSetTest;
 
@@ -26,33 +25,33 @@ public abstract class AbstractPersistentOrderedSetTest<C extends PersistentOrder
         super(builder);
     }
     
-//  @Test
-//  public void find() {
-//    String foo1 = new String("11111");
-//    String foo2 = new String("11111");
-//    assertNotSame(foo1, foo2);
-//    
-//    PersistentTreeSet<String> set = (PersistentTreeSet<String>) build(foo1);
-//    assertTrue(set.contains(foo1));
-//    assertTrue(set.contains(foo2));
-//    
-//    assertSame(foo1, set.find(foo2));
-//    assertSame(foo1, set.find(foo1));
-//    assertNull(set.clear().find(foo2));
-//    
-//    set = set.remove(foo1).add(foo2);
-//    assertSame(foo2, set.find(foo1));
-//    
-//    set = set.addAll(collectionLarge);
-//    assertSame(foo2, set.find(foo1));
-//    
-//    set = set.add(foo1);
-//    assertSame(foo2, set.find(foo1));
-//    
-//    set = set.remove(foo1);
-//    set = set.add(foo1);
-//    assertSame(foo1, set.find(foo2));
-//  }
+    @Test
+    public void findEqualOrNull() {
+        String foo1 = new String("11111");
+        String foo2 = new String("11111");
+        assertNotSame(foo1, foo2);
+        
+        PersistentOrderedSet<String> set = build(foo1);
+        assertTrue(set.contains(foo1));
+        assertTrue(set.contains(foo2));
+        
+        assertSame(foo1, set.findEqualOrNull(foo2));
+        assertSame(foo1, set.findEqualOrNull(foo1));
+        assertNull(set.cleared().findEqualOrNull(foo2));
+        
+        set = set.without(foo1).with(foo2);
+        assertSame(foo2, set.findEqualOrNull(foo1));
+        
+        set = set.withAll(collectionLarge);
+        assertSame(foo2, set.findEqualOrNull(foo1));
+        
+        set = set.with(foo1);
+        assertSame(foo2, set.findEqualOrNull(foo1));
+        
+        set = set.without(foo1);
+        set = set.with(foo1);
+        assertSame(foo1, set.findEqualOrNull(foo2));
+    }
     
     @Test
     public void checkInvariants() {
@@ -72,17 +71,31 @@ public abstract class AbstractPersistentOrderedSetTest<C extends PersistentOrder
         assertEquals(0, set.size());
     }
     
-    private void checkInvariants(PersistentOrderedSet<?> set) {
-        PersistentTreeSet<?, ?> treeSet = ObjectUtil.castOrNull(set, PersistentTreeSet.class);
-        if (treeSet != null) {
-            treeSet.checkInvariants();
-        }
+    protected void checkInvariants(PersistentOrderedSet<?> set) {}
+    
+    @Test
+    public void with() {
+        PersistentOrderedSet<String> set0 = collectionEmpty;
+        PersistentOrderedSet<String> set1 = set0.with("hello");
+        PersistentOrderedSet<String> set2 = set1.with("foo");
+        
+        assertTrue(set0.isEmpty());
+        assertEquals(setOf("hello"), set1);
+        assertEquals(setOf("hello", "foo"), set2);
+        
+        assertSame(set2, set2.with("foo"));
     }
     
-    @Override
-    protected Iterable<String> expectedOrder(Iterable<String> elements) {
-        return CollectionUtil.sort(ImmutableCollections.asList(elements));
+    @Test
+    public void withAll() {
+        PersistentOrderedSet<String> list1 = collectionEmpty.withAll(ImmutableCollections.listOf("1", "2", "3"));
+        PersistentOrderedSet<String> list2 = list1.withAll(ImmutableCollections.listOf("4", "1"));
+        assertSame(list2, list2.withAll(ImmutableCollections.<String>listOf()));
+        
+        assertEquals(setOf("1", "2", "3"), list1);
+        assertEquals(setOf("1", "2", "3", "4", "1"), list2);
     }
+    
     
     @Test
     public void withoutNonExisting() {
@@ -146,9 +159,7 @@ public abstract class AbstractPersistentOrderedSetTest<C extends PersistentOrder
         assertEquals(setOf("one"), collectionThree.withoutAll(ImmutableCollections.listOf("four", "three", "five", "two", "six")));
     }
     
-    private OrderedSet<String> setOf(String... elements) {
-        return TreeSet.newBuilder(String.class).addAll(CollectionUtil.wrap(elements)).build();
-    }
+    protected abstract OrderedSet<String> setOf(String... elements);
     
     @Test
     public void cleared() {

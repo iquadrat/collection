@@ -8,15 +8,19 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 import org.povworld.collection.CollectionUtil;
 import org.povworld.collection.Identificator;
+import org.povworld.collection.OrderedSet;
+import org.povworld.collection.common.ObjectUtil;
 import org.povworld.collection.immutable.ImmutableCollections;
+import org.povworld.collection.mutable.TreeSet;
 import org.povworld.collection.persistent.PersistentOrderedSet;
 import org.povworld.collection.persistent.PersistentTreeSet;
 import org.povworld.collection.persistent.PersistentTreeSet.BalancerType;
 
-import test.org.povworld.collection.AbstractOrderedSetTest;
-
+/**
+ * Unit tests for {@link PersistentTreeSet}. 
+ */
 @RunWith(Parameterized.class)
-public class PersistentTreeSetTest extends AbstractOrderedSetTest<PersistentOrderedSet<String>> {
+public class PersistentTreeSetTest extends AbstractPersistentOrderedSetTest<PersistentOrderedSet<String>> {
     
     @Parameters(name = "{0}")
     public static Collection<Object[]> data() {
@@ -35,6 +39,20 @@ public class PersistentTreeSetTest extends AbstractOrderedSetTest<PersistentOrde
     @Override
     protected Identificator<? super String> getIdentificator() {
         return CollectionUtil.getDefaultComparator(String.class);
+    }
+    
+    @Override
+    protected OrderedSet<String> setOf(String... elements) {
+        return TreeSet.newBuilder(String.class).addAll(CollectionUtil.wrap(elements)).build();
+    }
+
+    @Override
+    protected void checkInvariants(PersistentOrderedSet<?> set) {
+        PersistentTreeSet<?, ?> treeSet = ObjectUtil.castOrNull(set, PersistentTreeSet.class);
+        // Cast does not succeed if it is the special object for 'empty'.
+        if (treeSet != null) {
+            treeSet.checkInvariants();
+        }
     }
     
 }
