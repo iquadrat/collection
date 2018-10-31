@@ -475,7 +475,7 @@ public class TreeMultiMap<K, V> extends AbstractMap<K, Set<V>> implements MultiM
             if (min == null) {
                 return null;
             }
-            // TODO this goes through tree twice
+            // TODO this goes through twice
             Node<K, V> top = tree.find(min);
             return new ValueSet(top);
         }
