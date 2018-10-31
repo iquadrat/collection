@@ -18,12 +18,12 @@ public class PersistentCollections {
     
     public static <E> PersistentList<E> listOf(E element) {
         // TODO create singleton collection
-        return new PersistentArrayList<E>(element);
+        return PersistentArrayList.<E>empty().with(element);
     }
     
     @SafeVarargs
     public static <E> PersistentList<E> listOf(E... elements) {
-        return new PersistentArrayList<E>(elements);
+        return asList(wrap(elements));
     }
     
     public static <E> PersistentList<E> asList(Iterable<E> elements) {
@@ -31,7 +31,7 @@ public class PersistentCollections {
     }
     
     public static <E> PersistentList<E> asList(Collection<E> elements) {
-        return new PersistentArrayList<E>(elements);
+        return PersistentArrayList.copyOf(elements);
     }
     
     // PersistentSet

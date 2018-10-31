@@ -11,7 +11,6 @@ import javax.annotation.Nullable;
 import javax.annotation.concurrent.NotThreadSafe;
 
 import org.povworld.collection.Collection;
-import org.povworld.collection.CollectionUtil;
 import org.povworld.collection.common.AbstractCollectionBuilder;
 import org.povworld.collection.common.AbstractOrderedCollection;
 import org.povworld.collection.common.ArrayUtil;
@@ -160,6 +159,7 @@ public class PersistentArrayList<E> extends AbstractOrderedCollection<E> impleme
         
         @Override
         public Bucket<E> withReplacementAt(E element, int index) {
+            // TODO use identificator
             if (elements[index].equals(element)) {
                 return this;
             }
@@ -376,22 +376,13 @@ public class PersistentArrayList<E> extends AbstractOrderedCollection<E> impleme
         return new PersistentArrayList<>((Bucket<E>)EMPTY_BUCKET, bucketSizeMax);
     }
     
+    public static <E> PersistentArrayList<E> copyOf(Collection<E> elements) {
+        return PersistentArrayList.<E>empty().withAll(elements);
+    }    
+    
     private final Bucket<E> root;
     
     private final int bucketSizeMax;
-    
-    @SafeVarargs
-    public PersistentArrayList(E... elements) {
-        this(CollectionUtil.wrap(elements));
-    }
-    
-    public PersistentArrayList(E element) {
-        this(PersistentArrayList.<E>empty().with(element).root, DEFAULT_BUCKET_MAX_SIZE);
-    }
-    
-    public PersistentArrayList(Collection<E> elements) {
-        this(PersistentArrayList.<E>empty().withAll(elements).root, DEFAULT_BUCKET_MAX_SIZE);
-    }
     
     private PersistentArrayList(Bucket<E> root, int bucketMaxSize) {
         this.root = root;

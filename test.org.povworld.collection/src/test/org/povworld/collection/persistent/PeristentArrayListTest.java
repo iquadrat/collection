@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 import org.povworld.collection.persistent.PersistentArrayList;
+import org.povworld.collection.persistent.PersistentCollections;
 import org.povworld.collection.persistent.PersistentList;
 
 /**
@@ -18,7 +19,7 @@ public class PeristentArrayListTest extends AbstractPersistentListTest<Persisten
     @Test
     public void createFromNonFinalArray() {
         String[] elements = new String[] {"a"};
-        PersistentArrayList<String> list = new PersistentArrayList<>(elements);
+        PersistentList<String> list = PersistentCollections.listOf(elements);
         assertEquals("a", list.get(0));
         elements[0] = "b";
         assertEquals("a", list.get(0));
