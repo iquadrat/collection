@@ -1,8 +1,6 @@
 package org.povworld.collection.persistent;
 
-import java.util.ArrayDeque;
 import java.util.Arrays;
-import java.util.Deque;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -402,7 +400,7 @@ public class PersistentArrayList<E> extends AbstractOrderedCollection<E> impleme
          * Stack of buckets which marks the current path of the iteration in the
          * tree.
          */
-        private final Deque<Bucket<E>> bucketStack = new ArrayDeque<>(MAX_HEIGHT); // TODO use ArrayList
+        private final ArrayList<Bucket<E>> bucketStack = new ArrayList<>(MAX_HEIGHT);
         
         /**
          * For each entry on the stack there is an index counter available.
