@@ -19,11 +19,11 @@ that the method is not going to modify the argument's contents. For each read-on
 which goes a step further in guaranteeing that the collection content never changes. This guarantees thread-safety and
 allows for easy sharing of collection instances.
 
-Implementations implement all the methods of their interfaces (no throwing of `UnsupportedOperationException`). 
+Classes implement all the methods of their interfaces (no throwing of `UnsupportedOperationException`). 
 The only exception to this is `Iterator` -- we use `java.util.Iterable` to take advantage of the for-each loop --
 which does not implement the `remove()` operation if returned by a read-only interface (some collections implement a `modifyingIterator()` method which allows removal during iteration).
 
-### Only Implement Efficient Operations
+### Support Efficient Operations Only
 Each collection provides only those operations which it can implement efficiently. This generally means in `O(log n)`
 where `n` is the number of elements in the collection (or `O(m * log(n + m))` for operations that take `m` elements
 as argument). This helps writing programs that scale well by forcing to choose the collection that supports the
@@ -35,7 +35,7 @@ nor the most memory efficient out there but up to a certain level both goals are
 are quite efficient in both dimensions.
 
 ### Disallow `null` elements
-The collections generally cannout contain `null` elements. `null` is used in some places to signal the absence of
+The collections generally cannot contain `null` elements. `null` is used in some places to signal the absence of
 an element. Allowing `null`as element whould make these conditions ambiguous.
 
 ## Requirements
@@ -51,7 +51,10 @@ Unit tests are written using [JUnit 5](https://junit.org), [Mockito](https://sit
 ## Getting Started
 
 ### The Hierarchy
-![Interfce Hierarchy](/doc/images/basic-interfaces.gif)
+
+<p align="center">
+  <img src="/doc/images/basic-interfaces.gif" width="75%" title="Interface Hierarchy">
+</p>
 
 `Collection` is the base interface for all the single-dimension collections. Basically, it just allows to query for the
 size and to iterate its elements.
@@ -70,16 +73,16 @@ uses see the following table.
 
 | Name                              | Ordered | Duplicates | Containment Check | Natural Order  | Get by Index | Insert at Front |
 |-----------------------------------|:-------:|:----------:|:-----------------:|:--------------:|:------------:|:---------------:|
-| ArrayList                         | Yes     | Yes        | No                | No             | Yes          | No              |
-| HashBag                           | No      | Yes        | Yes               | No             | No           | No              |
-| HashList                          | Yes     | Yes        | Yes               | No             | Yes          | No              |
-| HashSet                           | No      | No         | Yes               | No             | No           | No              |
-| IndexedHashSet                    | Yes     | No         | Yes               | No             | Yes          | No              |
-| TreeList                          | Yes     | Yes        | Yes               | No             | Yes          | Yes             |
-| TreeSequence                      | Yes     | Yes        | Yes               | Yes            | No           | No              |
-| TreeSet                           | Yes     | No         | Yes               | Yes            | No           | No              |
-| LinkedSequence                    | Yes     | Yes        | No                | No             | No           | Yes             |
-| IntrusiveLinkedSequence           | Yes     | Yes        | No                | No             | No           | Yes             |
+| [ArrayList](org.povworld.collection/src/org/povworld/collection/mutable/ArrayList.java)   | Yes     | Yes        | No                | No             | Yes          | No              |
+| [HashBag](org.povworld.collection/src/org/povworld/collection/mutable/HashBag.java)        | No      | Yes        | Yes               | No             | No           | No              |
+| [HashList](org.povworld.collection/src/org/povworld/collection/mutable/HashList.java)     | Yes     | Yes        | Yes               | No             | Yes          | No              |
+| [HashSet](org.povworld.collection/src/org/povworld/collection/mutable/HashSet.java)              | No      | No         | Yes               | No             | No           | No              |
+| [IndexedHashSet](org.povworld.collection/src/org/povworld/collection/mutable/IndexedHashSet.java)   | Yes     | No         | Yes               | No             | Yes          | No              |
+| [TreeList](org.povworld.collection/src/org/povworld/collection/mutable/TreeList.java)               | Yes     | Yes        | Yes               | No             | Yes          | Yes             |
+| [TreeSequence](org.povworld.collection/src/org/povworld/collection/mutable/TreeSequence.java)                      | Yes     | Yes        | Yes               | Yes            | No           | No              |
+| [TreeSet](org.povworld.collection/src/org/povworld/collection/mutable/TreeSet.java)                 | Yes     | No         | Yes               | Yes            | No           | No              |
+| [LinkedSequence](org.povworld.collection/src/org/povworld/collection/mutable/LinkedSequence.java)   | Yes     | Yes        | No                | No             | No           | Yes             |
+| [IntrusiveLinkedSequence](org.povworld.collection/src/org/povworld/collection/mutable/IntrusiveLinkedSequence.java)    | Yes     | Yes        | No                | No             | No           | Yes             |
 
 'Natural Order' means that the elements are always kept ordered according to a given ordering relation.
 
@@ -87,7 +90,8 @@ The `TreeList` has the additional advantage that is supports insertion (and remo
 not just at front and back like the `LinkedSequence`. The `IntrusiveLinkedSequence` allows to 
 customize the link objects that compose its doubly linked list and removal by pointer to the link.
 
-Not listed above is the `ConcurrentIntrusiveLinkedSequence` which has the same properties as `IntrusiveLinkedSequence`
+Not listed above is the [`ConcurrentIntrusiveLinkedSequence`](org.povworld.collection/src/org/povworld/collection/mutable/ConcurrentIntrusiveLinkedSequence)
+which has the same properties as `IntrusiveLinkedSequence`
 but supports concurrent operations. All the other classes above are not thread-safe, you need to properly guard them
 against concurrent access if multiple threads read or modify them.
 
@@ -101,7 +105,7 @@ So, instead of
 <pre><code>
 public class NameRepository {
    
-     private final <b>Set&lt;String&gt;</b> usedNames = new HashSet<>();
+     private final <b>Set</b>&lt;String&gt; usedNames = new HashSet<>();
 
      public void registerName(String name) {
        if (!usedNames.add(name)) {  <b>// Ooops, no 'add' on Set...</b>
@@ -119,7 +123,7 @@ public class NameRepository<Foo> {
      private final <b>HashSet</b>&lt;String&gt; usedNames = new HashSet<>();
 
      public void registerName(String name) {
-       if (!usedNames.add(name)) { // ... but there is on HashSet!
+       if (!usedNames.add(name)) { <b>// ... but there is on HashSet!</b>
          throw new IllegalStateException("Already registered");
        }
      }
@@ -142,8 +146,8 @@ public class NameRepository<Foo> {
 }
 ```
 In this example `CollectionUtil.sort` takes a `Collection` argument indicating that it does not need
-to modify its contents (though it would be principally possible by casting it). Instead, it creates a
-new `ArrayList` to hold the sorted elements.
+to modify its contents (though it would be principally possible by casting it). Instead, it creates 
+and returns a new `ArrayList` to hold the sorted elements.
 
 ### Builders
 
@@ -151,7 +155,7 @@ Another way to create collection instances is through their builders. A builder 
 if elements need to be collected from different places. Most collections have a static `newBuilder()` method
 that returns a `CollectionBuilder` for the collection.
 
-An example collecting permutations of a string in a recursive implementation:
+An example collecting all permutations of a string in a recursive implementation:
 ```java
 class Permutations {
     public static ImmutableSet<String> permutations(String s) {
@@ -172,7 +176,7 @@ class Permutations {
 }
 ```
 
-Builders are the only way to create instances of any subclass of `ImmutableCollection`. Immutable collections
+Builders are the only way to create instances of any implementation of `ImmutableCollection`. Immutable collections
 are guaranteed to never change after creation. You can also use the static methods of `ImmutableCollections`
 like `listOf(...)`, `setOf(...)` etc which create immutable collections indirectly by using the builders.
 
