@@ -259,11 +259,10 @@ public class TreeMap<K, V> extends AbstractMap<K, V> {
         @Override
         @CheckForNull
         public V getFirstOrNull() {
-            TreeMapNode<K, V> min = TreeUtil.getMinNode(tree.getRoot());
-            if (min == null) {
+            if (isEmpty()) {
                 return null;
             }
-            return min.getValue();
+            return TreeUtil.getMinNode(tree.getRoot()).getValue();
         }
         
         @Override

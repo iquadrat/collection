@@ -1,7 +1,6 @@
 package test.org.povworld.collection.tree;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
 
 import java.util.Iterator;
 
@@ -87,19 +86,9 @@ public class TreeUtilTest {
     }
     
     @Test
-    public void getMaxNodeOfLeaf() {
-        assertNull(TreeUtil.getMaxNode(leaf));
-    }
-    
-    @Test
     public void getMaxNode() {
         assertEquals(single, TreeUtil.getMaxNode(single));
         assertEquals(tree.getRight(), TreeUtil.getMaxNode(tree));
-    }
-    
-    @Test
-    public void getMinNodeOfLeaf() {
-        assertNull(TreeUtil.getMinNode(leaf));
     }
     
     @Test

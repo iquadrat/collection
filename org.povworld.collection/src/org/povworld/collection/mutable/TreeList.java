@@ -663,14 +663,18 @@ public class TreeList<E> extends AbstractOrderedCollection<E> implements Contain
     
     @Override
     public E getFirstOrNull() {
-        TreeListNode<E> min = TreeUtil.getMinNode(indexTree);
-        return (min == null) ? null : min.getElement();
+        if (isEmpty()) {
+            return null;
+        }
+        return TreeUtil.getMinNode(indexTree).element;
     }
     
     @Override
     public E getLastOrNull() {
-        TreeListNode<E> min = TreeUtil.getMaxNode(indexTree);
-        return (min == null) ? null : min.getElement();
+        if (isEmpty()) {
+            return null;
+        }
+        return TreeUtil.getMaxNode(indexTree).element;
     }
     
     @Override

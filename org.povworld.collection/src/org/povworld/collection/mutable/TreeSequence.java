@@ -72,15 +72,19 @@ public class TreeSequence<E> extends AbstractOrderedCollection<E> implements Seq
     @Override
     @CheckForNull
     public E getFirstOrNull() {
-        ElementTreeNode<E> min = TreeUtil.getMinNode(tree.getRoot());
-        return (min == null) ? null : min.getElement();
+        if (isEmpty()) {
+            return null;
+        }
+        return TreeUtil.getMinNode(tree.getRoot()).getElement();
     }
     
     @Override
     @CheckForNull
     public E getLastOrNull() {
-        ElementTreeNode<E> max = TreeUtil.getMaxNode(tree.getRoot());
-        return (max == null) ? null : max.getElement();
+        if (isEmpty()) {
+            return null;
+        }
+        return TreeUtil.getMaxNode(tree.getRoot()).getElement();
     }
     
     public void add(E element) {

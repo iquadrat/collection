@@ -11,27 +11,18 @@ public class TreeUtil {
     
     private TreeUtil() {}
     
-    // TODO test vs non-recursive implementation
-    @CheckForNull
-    public static <N extends TreeNode<N>> N getMaxNode(@CheckForNull N subTree) {
-        if (subTree == null) {
-            return null;
+    public static <N extends TreeNode<N>> N getMaxNode(N subTree) {
+        while(subTree.getRight() != null) {
+            subTree = subTree.getRight();
         }
-        if (subTree.getRight() == null) {
-            return subTree;
-        }
-        return getMaxNode(subTree.getRight());
+        return subTree;
     }
     
-    @CheckForNull
-    public static <N extends TreeNode<N>> N getMinNode(@CheckForNull N subTree) {
-        if (subTree == null) {
-            return null;
+    public static <N extends TreeNode<N>> N getMinNode(N subTree) {
+        while(subTree.getLeft() != null) {
+            subTree = subTree.getLeft();
         }
-        if (subTree.getLeft() == null) {
-            return subTree;
-        }
-        return getMinNode(subTree.getLeft());
+        return subTree;
     }
     
     // TODO test vs non-recursive implementation
