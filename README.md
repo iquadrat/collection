@@ -53,7 +53,7 @@ Unit tests are written using [JUnit 5](https://junit.org), [Mockito](https://sit
 ### The Hierarchy
 
 <p align="center">
-  <img src="/doc/images/basic-interfaces.gif" width="75%" title="Interface Hierarchy">
+  <img src="doc/images/basic-interfaces.gif" width="75%" title="Interface Hierarchy">
 </p>
 
 `Collection` is the base interface for all the single-dimension collections. Basically, it just allows to query for the
