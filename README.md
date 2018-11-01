@@ -118,7 +118,7 @@ public class NameRepository {
 write
 
 <pre><code>
-public class NameRepository<Foo> {
+public class NameRepository {
    
      private final <b>HashSet</b>&lt;String&gt; usedNames = new HashSet<>();
 
