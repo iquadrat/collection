@@ -90,7 +90,7 @@ The `TreeList` has the additional advantage that is supports insertion (and remo
 not just at front and back like the `LinkedSequence`. The `IntrusiveLinkedSequence` allows to 
 customize the link objects that compose its doubly linked list and removal by pointer to the link.
 
-Not listed above is the [`ConcurrentIntrusiveLinkedSequence`](org.povworld.collection/src/org/povworld/collection/mutable/ConcurrentIntrusiveLinkedSequence)
+Not listed above is the [`ConcurrentIntrusiveLinkedSequence`](org.povworld.collection/src/org/povworld/collection/mutable/ConcurrentIntrusiveLinkedSequence.java)
 which has the same properties as `IntrusiveLinkedSequence`
 but supports concurrent operations. All the other classes above are not thread-safe, you need to properly guard them
 against concurrent access if multiple threads read or modify them.
