@@ -943,8 +943,8 @@ public class PersistentHashSet<E> extends AbstractUnOrderedCollection<E> impleme
         }
         
         private boolean findNext() {
-            while (!bucketStack.isEmpty()) {
-                BucketIterable<E> top = bucketStack.peek();
+            BucketIterable<E> top;
+            while ((top = bucketStack.peek()) != null) {
                 if (top.findNext(this)) {
                     return true;
                 }

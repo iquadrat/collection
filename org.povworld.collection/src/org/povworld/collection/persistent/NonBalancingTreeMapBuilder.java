@@ -23,17 +23,19 @@ class NonBalancingTreeMapBuilder<K, V> extends AbstractTreeBuilder<NonBalancingT
     }
     
     @Override
-    public PlainTreeMapNode<K, V> createNode(PlainTreeMapNode<K, V> left, PlainTreeMapNode<K, V> right, K key, V value) {
+    public PlainTreeMapNode<K, V> createNode(@CheckForNull PlainTreeMapNode<K, V> left, @CheckForNull PlainTreeMapNode<K, V> right, K key, V value) {
         return new PlainTreeMapNode<K, V>(left, right, key, value);
     }
     
     @Override
-    public PlainTreeMapNode<K, V> createSubTree(PlainTreeMapNode<K, V> left, PlainTreeMapNode<K, V> top, PlainTreeMapNode<K, V> right) {
+    public PlainTreeMapNode<K, V> createSubTree(@CheckForNull PlainTreeMapNode<K, V> left, PlainTreeMapNode<K, V> top,
+            @CheckForNull PlainTreeMapNode<K, V> right) {
         return createNode(left, right, top.key, top.value);
     }
     
     @Override
-    public PlainTreeMapNode<K, V> balance(PlainTreeMapNode<K, V> left, PlainTreeMapNode<K, V> top, PlainTreeMapNode<K, V> right) {
+    public PlainTreeMapNode<K, V> balance(@CheckForNull PlainTreeMapNode<K, V> left, PlainTreeMapNode<K, V> top,
+            @CheckForNull PlainTreeMapNode<K, V> right) {
         return createSubTree(left, top, right);
     }
     
@@ -60,7 +62,7 @@ class NonBalancingTreeMapBuilder<K, V> extends AbstractTreeBuilder<NonBalancingT
             this(null, null, key, value);
         }
         
-        public PlainTreeMapNode(PlainTreeMapNode<K, V> left, PlainTreeMapNode<K, V> right, K key, @CheckForNull V value) {
+        public PlainTreeMapNode(@CheckForNull PlainTreeMapNode<K, V> left, @CheckForNull PlainTreeMapNode<K, V> right, K key, @CheckForNull V value) {
             this.left = left;
             this.right = right;
             this.key = key;

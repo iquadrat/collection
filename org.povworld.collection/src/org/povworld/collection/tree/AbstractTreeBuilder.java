@@ -42,7 +42,7 @@ public abstract class AbstractTreeBuilder<N extends ImmutableTreeNode<N>> implem
     }
     
     @Override
-    public Path<N> pathTo(N tree, N node, Comparator<? super N> comparator) {
+    public Path<N> pathTo(@CheckForNull N tree, N node, Comparator<? super N> comparator) {
         return TreeUtil.pathTo(tree, node, comparator, getEstimatedHeight(tree));
     }
     

@@ -12,6 +12,7 @@ import org.povworld.collection.common.AbstractCollectionBuilder;
 import org.povworld.collection.common.AbstractOrderedCollection;
 import org.povworld.collection.common.Assert;
 import org.povworld.collection.common.EmptyIterator;
+import org.povworld.collection.common.ObjectUtil;
 import org.povworld.collection.common.PreConditions;
 import org.povworld.collection.mutable.ArrayList;
 import org.povworld.collection.persistent.PersistentTreeList.ListTreeNode;
@@ -255,7 +256,6 @@ public class PersistentIndexedSetImpl<E> extends AbstractOrderedCollection<E> im
     
     private static final PersistentIndexedSet<?> EMPTY = new EmptyIndexedSet<Object>();
     
-    @CheckForNull
     private final IndexedPersistentTreeList<E> treeList;
     
     @SuppressWarnings("unchecked")
@@ -263,8 +263,8 @@ public class PersistentIndexedSetImpl<E> extends AbstractOrderedCollection<E> im
         return (PersistentIndexedSet<E>)EMPTY;
     }
     
-    private PersistentIndexedSetImpl(@CheckForNull IndexedPersistentTreeList<E> treeList) {
-        this.treeList = treeList;
+    private PersistentIndexedSetImpl(IndexedPersistentTreeList<E> treeList) {
+        this.treeList = ObjectUtil.checkNotNull(treeList);
     }
     
     @Override

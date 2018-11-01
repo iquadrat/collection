@@ -88,7 +88,7 @@ public interface Map<K, V> {
      * @see #getValueIdentificator()
      */
     @Override
-    public boolean equals(Object obj);
+    public boolean equals(@CheckForNull Object obj);
     
     /**
      * The hashcode of the map is calculated as:

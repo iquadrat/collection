@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 import javax.annotation.CheckForNull;
+import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 
 import org.povworld.collection.Collection;
@@ -1028,6 +1029,7 @@ public class PersistentMultiMapImpl2<K, V> extends AbstractMap<K, Set<V>> implem
     }
     
     @Override
+    @Nonnull
     public PersistentSet<V> get(K key) {
         return root.get(keyIdentificator, key, keyIdentificator.hashCode(key), 0);
     }

@@ -12,7 +12,7 @@ import org.povworld.collection.Comparator;
  */
 public interface TreeBuilder<N extends ImmutableTreeNode<N>> {
     
-    public Path<N> pathTo(N tree, N node, Comparator<? super N> comparator);
+    public Path<N> pathTo(@CheckForNull N tree, N node, Comparator<? super N> comparator);
     
     @CheckForNull
     public N remove(Path<N> path);

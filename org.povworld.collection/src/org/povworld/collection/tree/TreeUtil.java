@@ -51,6 +51,9 @@ public class TreeUtil {
     }
     
     public static <N extends TreeNode<N>> Path<N> pathToMin(@CheckForNull N tree, int estimatedLength) {
+        if (tree == null) {
+            return Path.empty();
+        }
         Builder<N> path = Path.newBuilder(tree, estimatedLength);
         for (N node = tree.getLeft(); node != null; node = node.getLeft()) {
             path.append(true, node);
@@ -59,6 +62,9 @@ public class TreeUtil {
     }
     
     public static <N extends TreeNode<N>> Path<N> pathToMax(@CheckForNull N tree, int estimatedLength) {
+        if (tree == null) {
+            return Path.empty();
+        }
         Builder<N> path = Path.newBuilder(tree, estimatedLength);
         for (N node = tree.getRight(); node != null; node = node.getRight()) {
             path.append(false, node);

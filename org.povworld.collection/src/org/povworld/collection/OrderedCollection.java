@@ -46,7 +46,7 @@ public interface OrderedCollection<E> extends Collection<E> {
      * identificator).
      */
     @Override
-    public boolean equals(Object obj);
+    public boolean equals(@CheckForNull Object obj);
     
     /**
      * The hash code must be calculated as

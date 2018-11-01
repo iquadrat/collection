@@ -2,6 +2,8 @@ package org.povworld.collection.common;
 
 import java.util.Iterator;
 
+import javax.annotation.CheckForNull;
+
 import org.povworld.collection.CollectionUtil;
 import org.povworld.collection.Identificator;
 import org.povworld.collection.OrderedCollection;
@@ -16,7 +18,7 @@ import org.povworld.collection.OrderedCollection;
 public abstract class AbstractOrderedCollection<E> implements OrderedCollection<E> {
     
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(@CheckForNull Object o) {
         if (this == o) return true;
         
         OrderedCollection<?> other = ObjectUtil.castOrNull(o, OrderedCollection.class);

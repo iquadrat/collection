@@ -214,20 +214,18 @@ public class OrderedHashMap<K, V> extends AbstractMap<K, V> {
         
         @Override
         public K getCurrentKey() throws NoSuchElementException {
-            checkHasCurrent();
+            if (current == null) {
+                throw new NoSuchElementException();
+            }
             return current.key;
         }
         
         @Override
         public V getCurrentValue() throws NoSuchElementException {
-            checkHasCurrent();
-            return current.value;
-        }
-        
-        private void checkHasCurrent() {
             if (current == null) {
                 throw new NoSuchElementException();
             }
+            return current.value;
         }
     }
     

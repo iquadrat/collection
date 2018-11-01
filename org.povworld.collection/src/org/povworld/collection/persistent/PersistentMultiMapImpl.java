@@ -1,5 +1,6 @@
 package org.povworld.collection.persistent;
 
+import javax.annotation.Nonnull;
 import javax.annotation.concurrent.NotThreadSafe;
 
 import org.povworld.collection.Collection;
@@ -44,6 +45,7 @@ public class PersistentMultiMapImpl<K, V> extends AbstractMultiMap<K, V, Set<V>>
     }
     
     @Override
+    @Nonnull
     public PersistentSet<V> get(K key) {
         PersistentSet<V> values = map.get(key);
         if (values == null) return emptyValueSet();

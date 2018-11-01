@@ -13,6 +13,7 @@ import org.povworld.collection.common.Interval;
 import org.povworld.collection.common.PreConditions;
 import org.povworld.collection.tree.AbstractAvlTreeNode;
 import org.povworld.collection.tree.AvlTree;
+import org.povworld.collection.tree.AvlTreeNode;
 import org.povworld.collection.tree.TreeUtil;
 
 // TODO implement some map interface
@@ -140,8 +141,8 @@ public class IntervalMap<V> {
         private final Interval interval;
         private final ArrayList<IntervalNode<V>> stack;
         
-        public OverlapperIterator(Interval interval, IntervalNode<V> root) {
-            this.stack = new ArrayList<>(root == null ? 0 : root.getHeight());
+        public OverlapperIterator(Interval interval, @CheckForNull IntervalNode<V> root) {
+            this.stack = new ArrayList<>(AvlTreeNode.getHeight(root));
             this.interval = interval;
             pushLeftSubTrees(root);
             findNext();
@@ -208,7 +209,7 @@ public class IntervalMap<V> {
         
         private final Iterator<IntervalNode<V>> subTreeIterator;
         
-        public IntervalEntryIterator(IntervalNode<V> root) {
+        public IntervalEntryIterator(@CheckForNull IntervalNode<V> root) {
             subTreeIterator = TreeUtil.iterateNodes(root);
         }
         

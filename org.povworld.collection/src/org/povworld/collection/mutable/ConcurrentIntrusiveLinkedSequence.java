@@ -3,7 +3,6 @@ package org.povworld.collection.mutable;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-import javax.annotation.CheckForNull;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.NotThreadSafe;
 import javax.annotation.concurrent.ThreadSafe;
@@ -128,7 +127,7 @@ public class ConcurrentIntrusiveLinkedSequence<L extends ConcurrentIntrusiveLink
         /**
          * Is set on calling {@link #hasNext()} and cleared in {@link #next()}.
          */
-        @CheckForNull
+        @Nullable
         protected L next = null;
         
         private boolean removable = false;

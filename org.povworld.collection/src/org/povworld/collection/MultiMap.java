@@ -1,5 +1,7 @@
 package org.povworld.collection;
 
+import javax.annotation.Nonnull;
+
 /**
  * An interface for {@link ListMultiMap}s where the collection of values associated
  * with some key contain no duplicates and have no defined order. 
@@ -14,6 +16,7 @@ public interface MultiMap<K, V> extends Map<K, Set<V>> {
      *         If the key is not in the map, an empty set is returned.
      */
     @Override
+    @Nonnull
     public Set<V> get(K key);
     
     /**

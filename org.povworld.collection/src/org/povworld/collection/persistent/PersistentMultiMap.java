@@ -1,5 +1,6 @@
 package org.povworld.collection.persistent;
 
+import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 
 import org.povworld.collection.Collection;
@@ -10,6 +11,7 @@ import org.povworld.collection.immutable.ImmutableContainer;
 public interface PersistentMultiMap<K, V> extends MultiMap<K, V> {
     
     @Override
+    @Nonnull
     public PersistentSet<V> get(K key);
     
     @Override

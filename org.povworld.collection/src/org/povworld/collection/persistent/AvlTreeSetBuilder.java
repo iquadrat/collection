@@ -1,5 +1,6 @@
 package org.povworld.collection.persistent;
 
+import javax.annotation.CheckForNull;
 import javax.annotation.concurrent.Immutable;
 
 import org.povworld.collection.common.PreConditions;
@@ -34,7 +35,7 @@ class AvlTreeSetBuilder<E> extends AbstractAvlTreeBuilder<AvlTreeSetBuilder.AvlT
             this(null, null, element);
         }
         
-        AvlTreeSetNode(AvlTreeSetNode<E> left, AvlTreeSetNode<E> right, E element) {
+        AvlTreeSetNode(@CheckForNull AvlTreeSetNode<E> left, @CheckForNull AvlTreeSetNode<E> right, E element) {
             super(left, right);
             PreConditions.paramNotNull(element);
             this.element = element;

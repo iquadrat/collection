@@ -13,6 +13,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 import org.povworld.collection.CollectionUtil;
 import org.povworld.collection.immutable.ImmutableCollections;
 import org.povworld.collection.mutable.ArrayList;
+import org.povworld.collection.tree.Path;
 import org.povworld.collection.tree.TreeNode;
 import org.povworld.collection.tree.TreeUtil;
 
@@ -105,6 +106,20 @@ public class TreeUtilTest {
     public void getMinNode() {
         assertEquals(single, TreeUtil.getMinNode(single));
         assertEquals(tree.getLeft(), TreeUtil.getMinNode(tree));
+    }
+    
+    @Test
+    public void getPathToMin() {
+        assertEquals(Path.empty(), TreeUtil.pathToMin(null, 0));
+        assertEquals(Path.newBuilder(single, 1).build(), TreeUtil.pathToMin(single, 1));
+        assertEquals(Path.newBuilder(tree, 1).append(true, tree.getLeft()).build(), TreeUtil.pathToMin(tree, 1));
+    }
+    
+    @Test
+    public void getPathToMax() {
+        assertEquals(Path.empty(), TreeUtil.pathToMax(null, 0));
+        assertEquals(Path.newBuilder(single, 1).build(), TreeUtil.pathToMax(single, 1));
+        assertEquals(Path.newBuilder(tree, 1).append(false, tree.getRight()).build(), TreeUtil.pathToMax(tree, 1));
     }
     
     @Test

@@ -444,8 +444,8 @@ public class PersistentArrayList<E> extends AbstractOrderedCollection<E> impleme
         }
         
         private boolean findNext() {
-            while (!bucketStack.isEmpty()) {
-                Bucket<E> top = bucketStack.peek();
+            Bucket<E> top;
+            while ((top = bucketStack.peek()) != null) {
                 if (top.findNext(this)) {
                     return true;
                 }

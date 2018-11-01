@@ -3,6 +3,7 @@ package org.povworld.collection.tree;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+import javax.annotation.CheckForNull;
 import javax.annotation.concurrent.NotThreadSafe;
 
 import org.povworld.collection.mutable.ArrayList;
@@ -20,14 +21,14 @@ public abstract class PostOrderTreeIterator<E, N extends TreeNode<N>> implements
     
     private final ArrayList<N> stack;
     
-    public PostOrderTreeIterator(N root) {
+    public PostOrderTreeIterator(@CheckForNull N root) {
         stack = new ArrayList<>();
         pushSubTrees(root);
     }
     
     protected abstract E getElement(N tree);
     
-    private void pushSubTrees(N root) {
+    private void pushSubTrees(@CheckForNull N root) {
         N subTree = root;
         while (subTree != null) {
             stack.push(subTree);
@@ -41,11 +42,11 @@ public abstract class PostOrderTreeIterator<E, N extends TreeNode<N>> implements
     
     private void iterate() {
         N subTree = stack.pop();
-        if (stack.isEmpty()) {
+        N next = stack.peek();
+        if (next == null) {
             // The root as last node has been visited, we are done.
             return;
         }
-        N next = stack.peek();
         if ((next.getRight() != null) && (next.getLeft() == subTree)) {
             // Right subtree has not yet been visited.
             pushSubTrees(next.getRight());

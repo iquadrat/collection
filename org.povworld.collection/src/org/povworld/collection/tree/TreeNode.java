@@ -3,7 +3,9 @@ package org.povworld.collection.tree;
 import javax.annotation.CheckForNull;
 
 /**
- * Represents a single node of a binary tree. 
+ * Represents a single node of a binary tree.
+ * <p>
+ * 'null' is used to represent leafs.
  *
  * @param <N> The node type itself, this is the concrete type implementing the interface.
  */

@@ -42,11 +42,6 @@ public class IntrusiveLinkedCollectionTest
         }
         
         @Override
-        public StringLink clone() throws CloneNotSupportedException {
-            return (StringLink)super.clone();
-        }
-        
-        @Override
         public String toString() {
             return getClass().getSimpleName() + "[" + data + "," + string + "]";
         }

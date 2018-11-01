@@ -1,5 +1,6 @@
 package org.povworld.collection.mutable;
 
+import javax.annotation.Nonnull;
 import javax.annotation.concurrent.NotThreadSafe;
 
 import org.povworld.collection.Collection;
@@ -67,6 +68,7 @@ public class HashMultiMap<K, V> extends AbstractMultiMap<K, V, Set<V>> implement
      *         If the key is not in the map, an empty collection is returned.
      */
     @Override
+    @Nonnull
     public Set<V> get(K key) {
         Set<V> values = map.get(key);
         if (values == null) {

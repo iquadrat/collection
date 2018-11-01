@@ -3,6 +3,7 @@ package org.povworld.collection.tree;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+import javax.annotation.CheckForNull;
 import javax.annotation.concurrent.NotThreadSafe;
 
 import org.povworld.collection.mutable.ArrayList;
@@ -19,19 +20,19 @@ public abstract class ReverseTreeIterator<E, N extends TreeNode<N>> implements I
     // Invariant: The right subtrees of the stack top has already been visited
     private final ArrayList<N> stack;
     
-    protected ReverseTreeIterator(N root, int estimatedHeight) {
+    protected ReverseTreeIterator(@CheckForNull N root, int estimatedHeight) {
         stack = initStack(root, estimatedHeight);
     }
     
     protected abstract E getElement(N tree);
     
-    private static <T extends TreeNode<T>> ArrayList<T> initStack(T root, int estimatedHeight) {
+    private static <T extends TreeNode<T>> ArrayList<T> initStack(@CheckForNull T root, int estimatedHeight) {
         ArrayList<T> result = new ArrayList<T>(estimatedHeight);
         pushRightSubTrees(root, result);
         return result;
     }
     
-    private static <T extends TreeNode<T>> void pushRightSubTrees(T root, ArrayList<T> result) {
+    private static <T extends TreeNode<T>> void pushRightSubTrees(@CheckForNull T root, ArrayList<T> result) {
         T subTree = root;
         while (subTree != null) {
             result.push(subTree);

@@ -13,6 +13,7 @@ import org.povworld.collection.Identificator;
 import org.povworld.collection.common.AbstractCollectionBuilder;
 import org.povworld.collection.common.AbstractOrderedCollection;
 import org.povworld.collection.common.EmptyIterator;
+import org.povworld.collection.common.ObjectUtil;
 import org.povworld.collection.common.PreConditions;
 import org.povworld.collection.tree.ImmutableTreeSetNode;
 import org.povworld.collection.tree.Path;
@@ -146,7 +147,6 @@ public class PersistentTreeSet<E, N extends ImmutableTreeSetNode<E, N>> extends 
     
     private final Comparator<? super E> comparator;
     
-    @CheckForNull
     private final N root;
     
     private final int size;
@@ -155,7 +155,7 @@ public class PersistentTreeSet<E, N extends ImmutableTreeSetNode<E, N>> extends 
         PreConditions.paramNotNull(root);
         this.treeBuilder = treeBalancer;
         this.comparator = comparator;
-        this.root = root;
+        this.root = ObjectUtil.checkNotNull(root);
         this.size = size;
     }
     
@@ -192,7 +192,6 @@ public class PersistentTreeSet<E, N extends ImmutableTreeSetNode<E, N>> extends 
     private N createNode(E element) {
         return treeBuilder.createNode(element);
     }
-    
     
     @Override
     public int size() {

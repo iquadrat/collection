@@ -56,7 +56,7 @@ class NonBalancingTreeSetBuilder<E> extends AbstractTreeBuilder<NonBalancingTree
             this(null, null, element);
         }
         
-        public PlainTreeSetNode(PlainTreeSetNode<E> left, PlainTreeSetNode<E> right, E element) {
+        public PlainTreeSetNode(@CheckForNull PlainTreeSetNode<E> left, @CheckForNull PlainTreeSetNode<E> right, E element) {
             this.left = left;
             this.right = right;
             this.element = element;

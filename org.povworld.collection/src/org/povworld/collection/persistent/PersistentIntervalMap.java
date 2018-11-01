@@ -205,7 +205,7 @@ public class PersistentIntervalMap<V> {
         @CheckForNull
         private Entry<V> currentEntry = null;
         
-        public IntervalEntryIterator(IntervalNode<V> root) {
+        public IntervalEntryIterator(@CheckForNull IntervalNode<V> root) {
             subTreeIterator = TreeUtil.iterateNodes(root);
         }
         
@@ -251,11 +251,12 @@ public class PersistentIntervalMap<V> {
         IntervalNode<V> newRoot = root;
         
         Path<IntervalNode<V>> pathToStart = pathTo(newRoot, interval.getStart());
-        if (pathToStart.getEnd() == null) {
+        IntervalNode<V> end = pathToStart.getEnd();
+        if (end == null) {
             newRoot = manipulator.replace(pathToStart, new IntervalNode<V>(interval, value));
         } else {
-            IntervalNode<V> newNode = pathToStart.getEnd().with(interval, value);
-            if (newNode == pathToStart.getEnd()) {
+            IntervalNode<V> newNode = end.with(interval, value);
+            if (newNode == end) {
                 return this;
             }
             newRoot = manipulator.replace(pathToStart, newNode);
@@ -266,12 +267,13 @@ public class PersistentIntervalMap<V> {
     @CheckReturnValue
     public PersistentIntervalMap<V> without(Interval interval, V value) {
         Path<IntervalNode<V>> pathToStart = pathTo(root, interval.getStart());
-        if (pathToStart.getEnd() == null) {
+        IntervalNode<V> end = pathToStart.getEnd();
+        if (end == null) {
             return this;
         }
         
-        IntervalNode<V> newNode = pathToStart.getEnd().without(interval, value);
-        if (newNode == pathToStart.getEnd()) {
+        IntervalNode<V> newNode = end.without(interval, value);
+        if (newNode == end) {
             return this;
         }
         

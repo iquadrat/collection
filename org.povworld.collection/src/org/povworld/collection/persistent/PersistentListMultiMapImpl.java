@@ -2,6 +2,8 @@ package org.povworld.collection.persistent;
 
 import java.util.NoSuchElementException;
 
+import javax.annotation.Nonnull;
+
 import org.povworld.collection.Collection;
 import org.povworld.collection.CollectionUtil;
 import org.povworld.collection.EntryIterator;
@@ -39,6 +41,7 @@ public class PersistentListMultiMapImpl<K, V> extends AbstractMultiMap<K, V, Lis
     }
     
     @Override
+    @Nonnull
     public PersistentList<V> get(K key) {
         PersistentList<V> values = map.get(key);
         if (values == null) return getEmptyValueList();

@@ -320,7 +320,7 @@ public class TreeList<E> extends AbstractOrderedCollection<E> implements Contain
             return (node == null) ? 0 : node.getSubTreeSize();
         }
         
-        public TreeListNode<E> remove(TreeListNode<E> subTree, int index) throws IndexOutOfBoundsException {
+        public TreeListNode<E> remove(@CheckForNull TreeListNode<E> subTree, int index) throws IndexOutOfBoundsException {
             if (subTree == null) {
                 throw new IndexOutOfBoundsException();
             }

@@ -87,7 +87,7 @@ public final class Path<N> {
             return length;
         }
         
-        public void append(boolean left, @CheckForNull N node) {
+        public Builder<N> append(boolean left, @CheckForNull N node) {
             if (length == this.left.length) {
                 // Resize array
                 int newSize = length * 2;
@@ -97,6 +97,7 @@ public final class Path<N> {
             this.left[length] = left;
             this.nodes[length + 1] = node;
             this.length++;
+            return this;
         }
         
         public Path<N> build() {
@@ -111,4 +112,31 @@ public final class Path<N> {
         }
         
     }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + Arrays.hashCode(left);
+        result = prime * result + Arrays.hashCode(nodes);
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+        if (!(obj instanceof Path)) return false;
+        Path<?> other = (Path<?>)obj;
+        if (length != other.length) return false;
+        if (!Arrays.equals(left, other.left)) return false;
+        if (!Arrays.equals(nodes, other.nodes)) return false;
+        return true;
+    }
+    
+    @Override
+    public String toString() {
+        return Arrays.toString(nodes);
+    }
+    
 }

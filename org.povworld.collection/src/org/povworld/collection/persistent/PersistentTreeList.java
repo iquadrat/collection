@@ -83,7 +83,7 @@ public class PersistentTreeList<E> extends AbstractOrderedCollection<E> implemen
         protected void dispose(ListTreeNode<E> node) {}
         
         @CheckForNull
-        E get(@CheckForNull ListTreeNode<E> tree, int position) {
+        E get(ListTreeNode<E> tree, int position) {
             ListTreeNode<E> subTree = tree;
             do {
                 int cmp = position - size(subTree.getLeft());
