@@ -774,8 +774,7 @@ public final class CollectionUtil {
         
     }
     
-    @SuppressWarnings("unchecked")
-    private static final Iterator<Object> EMPTY_ITERATOR = Collections.EMPTY_LIST.iterator();
+    private static final Iterator<Object> EMPTY_ITERATOR = Collections.emptyIterator();
     
     private static final Identificator<Object> OBJECT_IDENTIFICATOR = new ObjectIdentificator();
     

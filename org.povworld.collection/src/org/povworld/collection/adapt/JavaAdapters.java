@@ -100,7 +100,7 @@ public class JavaAdapters {
         
     }
     
-    public static class SetAdapter<E> extends java.util.AbstractSet<E> {
+    private static class SetAdapter<E> extends java.util.AbstractSet<E> {
         
         protected final Set<E> set;
         
@@ -125,7 +125,7 @@ public class JavaAdapters {
         
     }
     
-    public static class ListAdapter<E> extends java.util.AbstractList<E> {
+    private static class ListAdapter<E> extends java.util.AbstractList<E> {
         
         protected final IndexedCollection<E> indexedCollection;
         
@@ -150,7 +150,7 @@ public class JavaAdapters {
         
     }
     
-    public static class ContainerAdapter<E> extends CollectionAdapter<E> {
+    private static class ContainerAdapter<E> extends CollectionAdapter<E> {
         
         protected final Container<E> container;
         
