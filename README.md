@@ -113,7 +113,7 @@ public class NameRepository {
        }
      }
 }
-</pre></code>
+</code></pre>
 
 write
 
@@ -128,7 +128,7 @@ public class NameRepository<Foo> {
        }
      }
 }
-</pre></code>
+</code></pre>
 
 This allows you to limit the code that has write-access to the collection as strictly as possible, while
 still allowing to pass a collection around:
