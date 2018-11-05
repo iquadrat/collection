@@ -309,7 +309,7 @@ public class ConcurrentIntrusiveLinkedSequenceTest extends
                     startLatch.await();
                     
                     while (!terminate.get()) {
-                        Iterator<StringLink> iterator = collection.reverseIterator();
+                        Iterator<StringLink> iterator = collection.modifyingReverseIterator();
                         while (iterator.hasNext()) {
                             iterator.next();
                             if ((collection.size() > 1000) && (Math.random() > 0.8)) {
