@@ -218,10 +218,10 @@ public class TreeMap<K, V> extends AbstractMap<K, V> {
         
         @Override
         public Iterator<K> iterator() {
-            return new TreeIterator<K, TreeMapNode<K, ?>>(tree.getRoot(), AvlTreeNode.getHeight(tree.getRoot())) {
+            return new TreeIterator<K, TreeMapNode<K, V>>(tree.getRoot(), AvlTreeNode.getHeight(tree.getRoot())) {
                 
                 @Override
-                protected K getElement(TreeMapNode<K, ?> node) {
+                protected K getElement(TreeMapNode<K, V> node) {
                     return node.getKey();
                 }
             };
@@ -229,10 +229,10 @@ public class TreeMap<K, V> extends AbstractMap<K, V> {
         
         @Override
         public Iterator<K> reverseIterator() {
-            return new ReverseTreeIterator<K, TreeMapNode<K, ?>>(tree.getRoot(), AvlTreeNode.getHeight(tree.getRoot())) {
+            return new ReverseTreeIterator<K, TreeMapNode<K, V>>(tree.getRoot(), AvlTreeNode.getHeight(tree.getRoot())) {
                 
                 @Override
-                protected K getElement(TreeMapNode<K, ?> node) {
+                protected K getElement(TreeMapNode<K, V> node) {
                     return node.getKey();
                 }
             };
@@ -267,9 +267,9 @@ public class TreeMap<K, V> extends AbstractMap<K, V> {
         
         @Override
         public Iterator<V> iterator() {
-            return new TreeIterator<V, TreeMapNode<?, V>>(tree.getRoot(), AvlTreeNode.getHeight(tree.getRoot())) {
+            return new TreeIterator<V, TreeMapNode<K, V>>(tree.getRoot(), AvlTreeNode.getHeight(tree.getRoot())) {
                 @Override
-                protected V getElement(TreeMapNode<?, V> node) {
+                protected V getElement(TreeMapNode<K, V> node) {
                     return node.getValue();
                 }
             };

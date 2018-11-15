@@ -260,13 +260,7 @@ public class PersistentTreeMap<K, V, N extends ImmutableTreeMapNode<K, V, N>> ex
         return new Keys<K, V, N>(this);
     }
     
-    private static class Values<V> implements ImmutableCollection<V> {
-        
-        private final PersistentTreeMap<?, V, ?> map;
-        
-        Values(PersistentTreeMap<?, V, ?> map) {
-            this.map = map;
-        }
+    private class Values implements ImmutableCollection<V> {
         
         @Override
         public V getFirstOrNull() {
@@ -280,24 +274,24 @@ public class PersistentTreeMap<K, V, N extends ImmutableTreeMapNode<K, V, N>> ex
         
         @Override
         public int size() {
-            return map.keyCount();
+            return PersistentTreeMap.this.keyCount();
         }
         
         @Override
         public Iterator<V> iterator() {
-            return new EntryValueIterator<V>(map.entryIterator());
+            return new EntryValueIterator<V>(PersistentTreeMap.this.entryIterator());
         }
         
         @Override
         public V getFirst() throws NoSuchElementException {
-            return TreeUtil.getMinNode(map.root).getValue();
+            return TreeUtil.getMinNode(root).getValue();
         }
         
     }
     
     @Override
     public ImmutableCollection<V> values() {
-        return new Values<V>(this);
+        return new Values();
     }
     
     private static class EmptyMap<K, V, N extends ImmutableTreeMapNode<K, V, N>> extends AbstractMap<K, V> implements PersistentMap<K, V> {

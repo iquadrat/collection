@@ -52,7 +52,7 @@ public final class CollectionUtil {
     public static <E> Identificator<? super E> getDefaultIdentificator(Class<E> type) {
         if (Comparable.class.isAssignableFrom(type)) {
             @SuppressWarnings("unchecked")
-            Identificator<E> result = getDefaultComparator(type.asSubclass(Comparable.class));
+            Identificator<E> result = (Identificator<E>)new DefaultComparator<>(type);
             return result;
         }
         return getObjectIdentificator();
@@ -404,7 +404,7 @@ public final class CollectionUtil {
     public static <E extends Comparable<E>, C extends OrderedCollection<E>> C sort(Collection<? super E> collection,
             CollectionBuilder<E, ? extends C> builder) {
         @SuppressWarnings("unchecked")
-        Class<E> clazz = (Class<E>)Comparable.class;
+        Class<E> clazz = (Class<E>)(Class<?>)Comparable.class;
         return sort(collection, builder, new DefaultComparator<E>(clazz));
     }
     
@@ -440,7 +440,7 @@ public final class CollectionUtil {
     @CheckReturnValue
     public static <E extends Comparable<E>> ArrayList<E> sort(Collection<? super E> collection) {
         @SuppressWarnings("unchecked")
-        Class<E> clazz = (Class<E>)Comparable.class;
+        Class<E> clazz = (Class<E>)(Class<?>)Comparable.class;
         return sort(collection, new DefaultComparator<E>(clazz));
     }
     
@@ -729,9 +729,9 @@ public final class CollectionUtil {
      */
     private static class DefaultComparator<T extends Comparable<T>> implements Comparator<T> {
         
-        private final Class<T> class_;
+        private final Class<?> class_;
         
-        public DefaultComparator(Class<T> class_) {
+        private DefaultComparator(Class<?> class_) {
             this.class_ = class_;
         }
         
